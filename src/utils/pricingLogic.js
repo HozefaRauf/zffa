@@ -106,17 +106,79 @@ export function getCurrentEstimate(product, state) {
   return { label: `${product.title} estimate`, price: 'Estimate not available' }
 }
 
-export function getQuantityOptions(product) {
-  if (product?.type === 'tieredQuantity' || product?.type === 'quantity') {
-    return product.quantities
+export function getStepsForProduct(product) {
+  const steps = ['category', 'product']
+
+  switch (product?.type) {
+    case 'area':
+      steps.push('dimensions')
+      break
+    case 'quantity':
+      steps.push('quantity')
+      break
+    case 'tieredQuantity':
+      steps.push('tier', 'quantity')
+      break
+    case 'size':
+    case 'fixedOptions':
+    case 'tieredSize':
+      steps.push('size')
+      break
+    default:
+      break
   }
-  return []
+
+  steps.push('result')
+  return steps
 }
 
-export function getTierOptions(product) {
-  return product?.type === 'tieredQuantity' ? product.tiers : []
+function extractFirstDollarAmount(str) {
+  if (!str) return null
+  const match = str.match(/\$([\d,]+(?:\.\d+)?)/)
+  if (!match) return null
+  return parseFloat(match[1].replace(/,/g, ''))
 }
 
-export function getSizeOptions(product) {
-  return product?.options ?? []
+export function getStartingPrice(product) {
+  if (!product) return null
+
+  switch (product.type) {
+    case 'area': {
+      return product.minPerSqFt != null ? `From $${product.minPerSqFt}/sq ft` : null
+    }
+    case 'quantity': {
+      const amounts = (product.priceTable ?? [])
+        .map((row) => extractFirstDollarAmount(row.range))
+        .filter((n) => n != null)
+      return amounts.length ? `From $${Math.min(...amounts)}` : 'Custom quote'
+    }
+    case 'tieredQuantity': {
+      const amounts = (product.tiers ?? [])
+        .flatMap((tier) => tier.priceTable ?? [])
+        .map((row) => extractFirstDollarAmount(row.range))
+        .filter((n) => n != null)
+      return amounts.length ? `From $${Math.min(...amounts)}` : 'Custom quote'
+    }
+    case 'size':
+    case 'fixedOptions': {
+      const amounts = (product.options ?? [])
+        .map((opt) => extractFirstDollarAmount(opt.priceLabel))
+        .filter((n) => n != null)
+      return amounts.length ? `From $${Math.min(...amounts)}` : 'Custom quote'
+    }
+    case 'tieredSize': {
+      const amounts = (product.tiers ?? [])
+        .map((tier) => extractFirstDollarAmount(tier.priceLabel))
+        .filter((n) => n != null)
+      return amounts.length ? `From $${Math.min(...amounts)}` : 'Custom quote'
+    }
+    case 'fixedRange':
+    case 'startingPrice': {
+      const amount = extractFirstDollarAmount(product.priceLabel)
+      return amount != null ? `From $${amount}` : product.priceLabel
+    }
+    case 'customQuote':
+    default:
+      return 'Custom quote'
+  }
 }

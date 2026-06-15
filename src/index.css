@@ -8,6 +8,12 @@
   --rose-deep:  #9f0e1b;
   --rose-soft:  #fff1f2;
   --rose-mid:   #fecdd3;
+  --rose-50:    #fff1f2;
+  --rose-100:   #ffe1e3;
+  --rose-200:   #fecdd3;
+  --rose-300:   #fca5ad;
+  --rose-600:   #c11524;
+  --rose-700:   #9f0e1b;
   --ink:        #0f172a;
 }
 
@@ -47,4 +53,18 @@ button, input, select { font: inherit; }
 }
 .choice-active {
   @apply border-rose-500 bg-rose-600 text-white;
+}
+
+/* ── Wizard panel notched corners (optional accent) ── */
+.wizard-panel {
+  clip-path: polygon(
+    16px 0, calc(100% - 16px) 0, 100% 16px,
+    100% calc(100% - 16px), calc(100% - 16px) 100%, 16px 100%,
+    0 calc(100% - 16px), 0 16px
+  );
+}
+
+/* ── Display font utility ── */
+.font-display {
+  font-family: 'Sora', 'Inter', ui-sans-serif, sans-serif;
 }

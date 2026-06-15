@@ -3,11 +3,13 @@ export const categories = [
     id: 'store-front-signage',
     title: 'Store Front Signage',
     description: 'High-impact storefront and exterior sign solutions.',
+    icon: 'Store',
     products: [
       {
         id: 'box-sign',
         title: 'Box Sign',
         description: 'Modern illuminated box signage for storefront visibility.',
+        icon: 'LayoutTemplate',
         type: 'area',
         minPerSqFt: 60,
         maxPerSqFt: 70,
@@ -17,6 +19,7 @@ export const categories = [
         id: 'channel-letters',
         title: 'Channel Letters',
         description: 'Dimensional signage with illumination for premium storefronts.',
+        icon: 'Lightbulb',
         type: 'area',
         minPerSqFt: 70,
         maxPerSqFt: 80,
@@ -26,6 +29,7 @@ export const categories = [
         id: 'a-frame-sign',
         title: 'Standard A-Frame Sign',
         description: 'Portable sidewalk signage built for retail and events.',
+        icon: 'Triangle',
         type: 'fixedOptions',
         options: [
           { id: '18x24', label: '18x24 A-Frame Sign', priceLabel: '$109–$119 CAD' },
@@ -37,6 +41,7 @@ export const categories = [
         id: 'sign-face-replacement',
         title: 'Sign Face Replacement',
         description: 'Refresh existing signage with new face panels and vinyl graphics.',
+        icon: 'Replace',
         type: 'area',
         minPerSqFt: 35,
         maxPerSqFt: 40,
@@ -48,11 +53,13 @@ export const categories = [
     id: 'windows-and-graphics',
     title: 'Windows & Graphics',
     description: 'Window branding, floor vinyls, and retail graphics.',
+    icon: 'AppWindow',
     products: [
       {
         id: 'vinyl-graphics',
         title: 'Vinyl Graphics',
         description: 'Ground-level window graphics for retail and storefront messaging.',
+        icon: 'AppWindow',
         type: 'area',
         minPerSqFt: 9,
         maxPerSqFt: 9,
@@ -62,6 +69,7 @@ export const categories = [
         id: 'perforated-graphics',
         title: 'Perforated Graphics',
         description: 'One-way vision perforated vinyl for windows and glass walls.',
+        icon: 'PanelLeft',
         type: 'area',
         minPerSqFt: 11,
         maxPerSqFt: 11,
@@ -71,6 +79,7 @@ export const categories = [
         id: 'decals',
         title: 'Decals',
         description: 'Custom cut vinyl decals for windows, floors, and walls.',
+        icon: 'Sticker',
         type: 'fixedRange',
         priceLabel: 'Approx. $9 per sq. ft.',
         note: 'Ground-level vinyl installation pricing.',
@@ -81,19 +90,22 @@ export const categories = [
     id: 'vehicle-branding',
     title: 'Vehicle Branding',
     description: 'Magnetic, vehicle, and branded fleet solutions.',
+    icon: 'Car',
     products: [
       {
         id: 'promotional-magnets',
         title: 'Promotional Magnets',
         description: 'Affordable fridge and giveaway magnets for marketing campaigns.',
+        icon: 'Magnet',
         type: 'quantity',
-        quantities: ['100', '250', '500', '1000', '2500'],
+        quantities: ['100', '250', '500', '1000', '2500', '5000'],
         priceTable: [
           { quantity: '100', range: '$80–$110' },
           { quantity: '250', range: '$140–$190' },
           { quantity: '500', range: '$220–$300' },
           { quantity: '1000', range: '$350–$500' },
-          { quantity: '2500', range: 'Custom quote' },
+          { quantity: '2500', range: '$700–$950' },
+          { quantity: '5000', range: '$1200–$1600' },
         ],
         note: 'Best for giveaways, real estate, and promotional campaigns.',
       },
@@ -101,6 +113,7 @@ export const categories = [
         id: 'vehicle-magnets',
         title: 'Vehicle Magnets',
         description: 'Premium car magnets sized for personal and fleet branding.',
+        icon: 'CarFront',
         type: 'size',
         options: [
           { id: 'small', label: 'Small (up to 12"×18")', priceLabel: '$55–$75' },
@@ -111,9 +124,25 @@ export const categories = [
         note: 'Used for vehicle wraps, fleets, and mobile branding applications.',
       },
       {
+        id: 'car-magnets',
+        title: 'Car Magnets',
+        description: 'Premium 30mil magnets for vehicle branding, ideal for small-batch orders.',
+        icon: 'Car',
+        type: 'quantity',
+        quantities: ['1', '2–5', '6–10', '10+'],
+        priceTable: [
+          { quantity: '1', range: '$60–$90' },
+          { quantity: '2–5', range: '$50–$75 each' },
+          { quantity: '6–10', range: '$45–$65 each' },
+          { quantity: '10+', range: 'Custom quote' },
+        ],
+        note: '30mil thickness for durable, high-impact vehicle branding. Typically ordered in 1–10 unit quantities.',
+      },
+      {
         id: 'custom-shape-magnets',
         title: 'Custom Shape Magnets',
         description: 'Die-cut branding magnets made from high-quality 30mil stock.',
+        icon: 'Shapes',
         type: 'quantity',
         quantities: ['100', '250', '500', '1000', '2500'],
         priceTable: [
@@ -131,11 +160,13 @@ export const categories = [
     id: 'banners-and-large-format-printing',
     title: 'Banners & Large Format Printing',
     description: 'Flexible, portable, and rigid large-format marketing assets.',
+    icon: 'Flag',
     products: [
       {
         id: 'vinyl-banners',
         title: 'Vinyl Banners',
         description: 'Weather-resistant banners for indoor and outdoor promotion.',
+        icon: 'Flag',
         type: 'fixedRange',
         priceLabel: '$20–$170',
         note: 'Print-only pricing based on standard banner sizes.',
@@ -144,6 +175,7 @@ export const categories = [
         id: 'posters',
         title: 'Posters',
         description: 'Large posters for retail, events, and display walls.',
+        icon: 'Image',
         type: 'fixedRange',
         priceLabel: '$15–$90',
         note: 'Print-only pricing based on standard poster sizes.',
@@ -152,6 +184,7 @@ export const categories = [
         id: 'pull-up-banners',
         title: 'Pull-up Banners',
         description: 'Portable retractable banners with hardware and print.',
+        icon: 'GalleryVerticalEnd',
         type: 'fixedRange',
         priceLabel: '$80–$135',
         note: 'Includes banner stand and full-color print.',
@@ -160,6 +193,7 @@ export const categories = [
         id: 'x-frame-banners',
         title: 'X-Frame Banners',
         description: 'Lightweight display banners ideal for trade show booths.',
+        icon: 'Columns2',
         type: 'fixedRange',
         priceLabel: '$60–$95',
         note: 'Includes frame hardware plus printed graphic.',
@@ -168,6 +202,7 @@ export const categories = [
         id: 'pop-up-displays',
         title: 'Pop-up Displays',
         description: 'Premium graphic walls for events and exhibition spaces.',
+        icon: 'PanelsTopLeft',
         type: 'fixedRange',
         priceLabel: '$305–$1230',
         note: 'Large structural displays for trade shows and premium events.',
@@ -176,6 +211,7 @@ export const categories = [
         id: 'trade-show-displays',
         title: 'Trade Show Displays',
         description: 'Custom event booth and display solutions.',
+        icon: 'Presentation',
         type: 'customQuote',
         priceLabel: 'Contact us for pricing',
         note: 'Pricing depends on configuration, size, and installation needs.',
@@ -184,6 +220,7 @@ export const categories = [
         id: 'flags',
         title: 'Flags',
         description: 'Tall outdoor flag branding for high-visibility signage.',
+        icon: 'FlagTriangleRight',
         type: 'fixedRange',
         priceLabel: '$100–$259',
         note: 'Large structural flag solutions for events and exteriors.',
@@ -192,6 +229,7 @@ export const categories = [
         id: 'foam-board-prints',
         title: 'Foam Board Prints',
         description: 'Rigid display panels for indoor signage and presentations.',
+        icon: 'Square',
         type: 'fixedRange',
         priceLabel: '$15–$60',
         note: 'Indoor decorative and professional display prints.',
@@ -200,6 +238,7 @@ export const categories = [
         id: 'canvas-prints',
         title: 'Canvas Prints',
         description: 'Professional canvas prints for gallery-style décor.',
+        icon: 'Frame',
         type: 'fixedRange',
         priceLabel: '$25–$80',
         note: 'Indoor decorative and gallery-quality canvas printing.',
@@ -208,6 +247,7 @@ export const categories = [
         id: 'custom-aluminum-signs',
         title: 'Custom Aluminum Signs',
         description: 'Durable weather-resistant signage for indoor & outdoor use.',
+        icon: 'Signpost',
         type: 'tieredSize',
         tiers: [
           {
@@ -238,6 +278,7 @@ export const categories = [
         id: 'coroplast-and-yard-signs',
         title: 'Coroplast & Yard Signs',
         description: 'Outdoor coroplast and yard signs with metal stakes for property and event branding.',
+        icon: 'SignpostBig',
         type: 'tieredQuantity',
         quantities: ['1–9', '10–24', '25–49', '50–99', '100+', '50+'],
         tiers: [
@@ -284,11 +325,13 @@ export const categories = [
     id: 'promotional-and-business-printing',
     title: 'Promotional & Business Printing',
     description: 'Print production for branded collateral, mailers, and packaging.',
+    icon: 'Printer',
     products: [
       {
         id: 'business-cards',
         title: 'Business Cards',
         description: 'Tiered business card pricing based on quality and finish.',
+        icon: 'IdCard',
         type: 'tieredQuantity',
         quantities: ['100', '250', '500', '1000'],
         tiers: [
@@ -332,6 +375,7 @@ export const categories = [
         id: 'flyers',
         title: 'Flyers',
         description: 'Standard and premium flyers for campaigns and promotions.',
+        icon: 'FileImage',
         type: 'tieredQuantity',
         quantities: ['100', '250', '500', '1000', '2500', '5000'],
         tiers: [
@@ -368,6 +412,7 @@ export const categories = [
         id: 'brochures',
         title: 'Brochures',
         description: 'Tri-fold and bi-fold brochures for brand storytelling.',
+        icon: 'BookOpen',
         type: 'tieredQuantity',
         quantities: ['100', '250', '500', '1000', '2500', '5000'],
         tiers: [
@@ -404,6 +449,7 @@ export const categories = [
         id: 'postcards',
         title: 'Postcards',
         description: 'Direct-mail and promotional postcards for campaigns.',
+        icon: 'MailOpen',
         type: 'tieredQuantity',
         quantities: ['100', '250', '500', '1000', '2500', '5000'],
         tiers: [
@@ -440,6 +486,7 @@ export const categories = [
         id: 'booklets',
         title: 'Booklets',
         description: 'Saddle-stitched booklets for catalogs, guides, and portfolios.',
+        icon: 'Notebook',
         type: 'tieredQuantity',
         quantities: ['100', '250', '500', '1000'],
         tiers: [
@@ -483,6 +530,7 @@ export const categories = [
         id: 'presentation-folders',
         title: 'Presentation Folders',
         description: 'Custom folders with pockets for proposals and sales kits.',
+        icon: 'FolderOpen',
         type: 'tieredQuantity',
         quantities: ['100', '250', '500', '1000'],
         tiers: [
@@ -526,8 +574,9 @@ export const categories = [
         id: 'door-hangers',
         title: 'Door Hangers',
         description: 'Custom door hangers for hospitality, real estate, and events.',
+        icon: 'DoorOpen',
         type: 'tieredQuantity',
-        quantities: ['100', '250', '500', '1000'],
+        quantities: ['100', '250', '500', '1000', '2500'],
         tiers: [
           {
             id: 'standard-door-hangers',
@@ -538,6 +587,7 @@ export const categories = [
               { quantity: '250', range: '$110–$150' },
               { quantity: '500', range: '$160–$220' },
               { quantity: '1000', range: '$220–$320' },
+              { quantity: '2500', range: '$400–$600' },
             ],
           },
           {
@@ -549,6 +599,7 @@ export const categories = [
               { quantity: '250', range: '$150–$220' },
               { quantity: '500', range: '$220–$320' },
               { quantity: '1000', range: '$320–$450' },
+              { quantity: '2500', range: '$600–$850' },
             ],
           },
         ],
@@ -558,6 +609,7 @@ export const categories = [
         id: 'stickers-roll-labels',
         title: 'Stickers / Roll Labels',
         description: 'Custom labels for packaging, promotions, and product branding.',
+        icon: 'Tag',
         type: 'tieredQuantity',
         quantities: ['100', '250', '500', '1000', '2500', '5000+'],
         tiers: [
@@ -594,6 +646,7 @@ export const categories = [
         id: 'tickets',
         title: 'Tickets',
         description: 'Sequentially numbered tickets for events, fundraisers, and admissions.',
+        icon: 'Ticket',
         type: 'tieredQuantity',
         quantities: ['100', '250', '500', '1000', '2500', '5000'],
         tiers: [
@@ -630,6 +683,7 @@ export const categories = [
         id: 'invitation-cards',
         title: 'Invitation Cards',
         description: 'Invitation cards in standard, premium, and luxury tiers.',
+        icon: 'Mail',
         type: 'tieredQuantity',
         quantities: ['100', '250', '500', '1000'],
         tiers: [
@@ -675,11 +729,13 @@ export const categories = [
     id: 'promotional-products',
     title: 'Promotional Products',
     description: 'Branded merchandise and corporate gifts for promotional campaigns.',
+    icon: 'Gift',
     products: [
       {
         id: 'custom-printed-mugs',
         title: 'Custom Printed Mugs',
         description: 'Budget-friendly ceramic mugs with full-color custom printing.',
+        icon: 'Coffee',
         type: 'tieredQuantity',
         quantities: ['10+', '25+', '50+', '100+'],
         tiers: [
@@ -701,6 +757,7 @@ export const categories = [
         id: 'stainless-steel-bottles',
         title: 'Stainless Steel Bottles',
         description: 'Durable 17oz stainless steel bottles for corporate branding.',
+        icon: 'GlassWater',
         type: 'tieredQuantity',
         quantities: ['10+', '25+', '50+', '100+'],
         tiers: [
@@ -722,6 +779,7 @@ export const categories = [
         id: 'tumblers',
         title: 'Tumblers',
         description: 'Premium 20oz branded drinkware with full-color branding.',
+        icon: 'CupSoda',
         type: 'tieredQuantity',
         quantities: ['10+', '25+', '50+', '100+'],
         tiers: [
@@ -743,6 +801,7 @@ export const categories = [
         id: 'keychains',
         title: 'Keychains',
         description: 'Promotional keychains with full-color printing sold in multiples of 10.',
+        icon: 'KeyRound',
         type: 'tieredQuantity',
         quantities: ['50+', '100+', '250+', '500+'],
         tiers: [
@@ -764,6 +823,7 @@ export const categories = [
         id: 'mouse-pads',
         title: 'Mouse Pads',
         description: 'Custom mouse pads with full-color printing for office branding.',
+        icon: 'Mouse',
         type: 'tieredQuantity',
         quantities: ['10+', '25+', '50+', '100+'],
         tiers: [
@@ -787,11 +847,13 @@ export const categories = [
     id: 'indoor-branding-and-displays',
     title: 'Indoor Branding & Displays',
     description: 'Interior display systems, event assets, and branded installations.',
+    icon: 'Presentation',
     products: [
       {
         id: 'led-displays',
         title: 'LED Displays',
         description: 'Digital LED installations for indoor branded messaging.',
+        icon: 'MonitorPlay',
         type: 'customQuote',
         priceLabel: 'Contact us for pricing',
         note: 'Pricing depends on size, installation, and control setup.',
@@ -800,6 +862,7 @@ export const categories = [
         id: 'table-covers',
         title: 'Table Covers',
         description: 'Branded table covers for events and receptions.',
+        icon: 'Layers2',
         type: 'fixedRange',
         priceLabel: '$95–$185 plus tax',
         note: 'Premium printed covers with fitted or stretch styles.',
@@ -808,6 +871,7 @@ export const categories = [
         id: 'tents',
         title: 'Tents',
         description: 'Custom event tents and canopies with branding options.',
+        icon: 'Tent',
         type: 'startingPrice',
         priceLabel: '$800 plus tax',
         note: 'Starting price for custom printed tent solutions.',
@@ -818,11 +882,13 @@ export const categories = [
     id: 'digital-services',
     title: 'Digital Services',
     description: 'Web and digital display services for modern brand experiences.',
+    icon: 'Globe',
     products: [
       {
         id: 'website-development',
         title: 'Website Development',
         description: 'Custom website projects for businesses and campaigns.',
+        icon: 'Monitor',
         type: 'customQuote',
         priceLabel: 'Contact us for pricing',
         note: 'Project pricing varies by scope, platform, and timelines.',
@@ -831,6 +897,7 @@ export const categories = [
         id: 'digital-display-setup',
         title: 'Digital Display Setup',
         description: 'Setup services for digital displays and signage networks.',
+        icon: 'MonitorSmartphone',
         type: 'startingPrice',
         priceLabel: '$300 plus',
         note: 'Approximate starting price based on setup complexity.',
