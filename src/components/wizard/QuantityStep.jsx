@@ -1,6 +1,6 @@
 import OptionCard from './OptionCard'
 
-export default function QuantityStep({ product, selectedTier, selectedQuantity, onSelect }) {
+export default function QuantityStep({ product, selectedTier, selectedQuantity, onSelect, categoryId }) {
   if (!product) return null
 
   const priceTable = selectedTier ? selectedTier.priceTable : product.priceTable ?? []
@@ -18,17 +18,20 @@ export default function QuantityStep({ product, selectedTier, selectedQuantity, 
         </p>
       </div>
 
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-        {priceTable.map((row) => (
-          <OptionCard
-            key={row.quantity}
-            icon="Hash"
-            title={row.quantity}
-            badge={row.range}
-            selected={selectedQuantity === row.quantity}
-            onClick={() => onSelect(row.quantity)}
-          />
-        ))}
+      <div className="rounded-3xl border border-slate-100 bg-slate-50/60 p-4 sm:p-5">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+          {priceTable.map((row) => (
+            <OptionCard
+              key={row.quantity}
+              icon="Hash"
+              title={row.quantity}
+              badge={row.range}
+              categoryId={categoryId}
+              selected={selectedQuantity === row.quantity}
+              onClick={() => onSelect(row.quantity)}
+            />
+          ))}
+        </div>
       </div>
     </div>
   )

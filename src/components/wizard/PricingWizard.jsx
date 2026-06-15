@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import categories from '../../data/pricingData'
 import { getCategoryById, getProductById, getCurrentEstimate, getStepsForProduct } from '../../utils/pricingLogic'
+import WizardTopBar from './WizardTopBar'
 import WizardShell from './WizardShell'
 import CategoryStep from './CategoryStep'
 import ProductStep from './ProductStep'
@@ -83,16 +84,15 @@ export default function PricingWizard() {
     height,
   })
 
-  // Determines if the Next button should be enabled
   const nextEnabled = useMemo(() => {
     switch (currentStepKey) {
-      case 'category': return !!selectedCategoryId
-      case 'product':  return !!selectedProductId
+      case 'category':   return !!selectedCategoryId
+      case 'product':    return !!selectedProductId
       case 'dimensions': return parseFloat(width) > 0 && parseFloat(height) > 0
-      case 'quantity': return !!selectedQuantity
-      case 'tier':     return !!selectedTierId
-      case 'size':     return !!selectedSizeId
-      default:         return true
+      case 'quantity':   return !!selectedQuantity
+      case 'tier':       return !!selectedTierId
+      case 'size':       return !!selectedSizeId
+      default:           return true
     }
   }, [currentStepKey, selectedCategoryId, selectedProductId, width, height, selectedQuantity, selectedTierId, selectedSizeId])
 
@@ -130,10 +130,6 @@ export default function PricingWizard() {
     setStepIndex(1)
   }
 
-  function handleProductSelect(id) {
-    setSelectedProductId(id)
-  }
-
   function renderStep() {
     switch (currentStepKey) {
       case 'category':
@@ -149,7 +145,7 @@ export default function PricingWizard() {
           <ProductStep
             category={selectedCategory}
             selectedProductId={selectedProductId}
-            onSelect={handleProductSelect}
+            onSelect={setSelectedProductId}
           />
         )
       case 'dimensions':
@@ -168,6 +164,7 @@ export default function PricingWizard() {
             product={selectedProduct}
             selectedTierId={selectedTierId}
             onSelect={setSelectedTierId}
+            categoryId={selectedCategory?.id}
           />
         )
       case 'quantity':
@@ -177,6 +174,7 @@ export default function PricingWizard() {
             selectedTier={selectedTier}
             selectedQuantity={selectedQuantity}
             onSelect={setSelectedQuantity}
+            categoryId={selectedCategory?.id}
           />
         )
       case 'size':
@@ -185,6 +183,7 @@ export default function PricingWizard() {
             product={selectedProduct}
             selectedSizeId={selectedSizeId}
             onSelect={setSelectedSizeId}
+            categoryId={selectedCategory?.id}
           />
         )
       case 'result':
@@ -210,28 +209,33 @@ export default function PricingWizard() {
   }
 
   return (
-    <WizardShell
-      currentStep={stepIndex + 1}
-      totalSteps={steps.length}
-      onBack={goBack}
-      onNext={goNext}
-      showBack={stepIndex > 0}
-      nextDisabled={!nextEnabled}
-      isResult={isResult}
-    >
-      <AnimatePresence mode="wait" custom={direction}>
-        <motion.div
-          key={currentStepKey + stepIndex}
-          custom={direction}
-          variants={variants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          transition={{ duration: 0.25, ease: 'easeOut' }}
+    <>
+      <WizardTopBar />
+      <main className="min-h-screen bg-white pb-16 pt-24">
+        <WizardShell
+          currentStep={stepIndex + 1}
+          totalSteps={steps.length}
+          onBack={goBack}
+          onNext={goNext}
+          showBack={stepIndex > 0}
+          nextDisabled={!nextEnabled}
+          isResult={isResult}
         >
-          {renderStep()}
-        </motion.div>
-      </AnimatePresence>
-    </WizardShell>
+          <AnimatePresence mode="wait" custom={direction}>
+            <motion.div
+              key={currentStepKey + stepIndex}
+              custom={direction}
+              variants={variants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{ duration: 0.25, ease: 'easeOut' }}
+            >
+              {renderStep()}
+            </motion.div>
+          </AnimatePresence>
+        </WizardShell>
+      </main>
+    </>
   )
 }

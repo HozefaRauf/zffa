@@ -16,17 +16,20 @@ export default function ProductStep({ category, selectedProductId, onSelect }) {
         </p>
       </div>
 
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-        {category.products.map((product) => (
-          <OptionCard
-            key={product.id}
-            icon={product.icon}
-            title={product.title}
-            badge={getStartingPrice(product)}
-            selected={selectedProductId === product.id}
-            onClick={() => onSelect(product.id)}
-          />
-        ))}
+      <div className="rounded-3xl border border-slate-100 bg-slate-50/60 p-4 sm:p-5">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+          {category.products.map((product) => (
+            <OptionCard
+              key={product.id}
+              icon={product.icon}
+              title={product.title}
+              badge={getStartingPrice(product)}
+              categoryId={category.id}
+              selected={selectedProductId === product.id}
+              onClick={() => onSelect(product.id)}
+            />
+          ))}
+        </div>
       </div>
     </div>
   )

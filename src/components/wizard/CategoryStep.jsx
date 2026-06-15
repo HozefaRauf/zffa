@@ -13,16 +13,19 @@ export default function CategoryStep({ categories, selectedCategoryId, onSelect 
         </p>
       </div>
 
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-        {categories.map((cat) => (
-          <OptionCard
-            key={cat.id}
-            icon={cat.icon}
-            title={cat.title}
-            selected={selectedCategoryId === cat.id}
-            onClick={() => onSelect(cat.id)}
-          />
-        ))}
+      <div className="rounded-3xl border border-slate-100 bg-slate-50/60 p-4 sm:p-5">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+          {categories.map((cat) => (
+            <OptionCard
+              key={cat.id}
+              icon={cat.icon}
+              title={cat.title}
+              categoryId={cat.id}
+              selected={selectedCategoryId === cat.id}
+              onClick={() => onSelect(cat.id)}
+            />
+          ))}
+        </div>
       </div>
     </div>
   )

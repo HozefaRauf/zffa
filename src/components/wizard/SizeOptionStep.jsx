@@ -1,6 +1,6 @@
 import OptionCard from './OptionCard'
 
-export default function SizeOptionStep({ product, selectedSizeId, onSelect }) {
+export default function SizeOptionStep({ product, selectedSizeId, onSelect, categoryId }) {
   if (!product) return null
 
   return (
@@ -15,17 +15,20 @@ export default function SizeOptionStep({ product, selectedSizeId, onSelect }) {
         </p>
       </div>
 
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-        {product.options.map((option) => (
-          <OptionCard
-            key={option.id}
-            icon="Shapes"
-            title={option.label}
-            badge={option.priceLabel}
-            selected={selectedSizeId === option.id}
-            onClick={() => onSelect(option.id)}
-          />
-        ))}
+      <div className="rounded-3xl border border-slate-100 bg-slate-50/60 p-4 sm:p-5">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+          {product.options.map((option) => (
+            <OptionCard
+              key={option.id}
+              icon="Shapes"
+              title={option.label}
+              badge={option.priceLabel}
+              categoryId={categoryId}
+              selected={selectedSizeId === option.id}
+              onClick={() => onSelect(option.id)}
+            />
+          ))}
+        </div>
       </div>
     </div>
   )

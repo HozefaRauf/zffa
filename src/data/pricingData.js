@@ -88,8 +88,8 @@ export const categories = [
   },
   {
     id: 'vehicle-branding',
-    title: 'Vehicle Branding',
-    description: 'Magnetic, vehicle, and branded fleet solutions.',
+    title: 'Custom Magnets',
+    description: 'Promotional, vehicle, and custom-shape magnet solutions.',
     icon: 'Car',
     products: [
       {

@@ -11,7 +11,7 @@ function getLowestTierPrice(tier) {
   return amounts.length ? `From $${Math.min(...amounts)}` : null
 }
 
-export default function TierStep({ product, selectedTierId, onSelect }) {
+export default function TierStep({ product, selectedTierId, onSelect, categoryId }) {
   if (!product) return null
 
   const isTieredSize = product.type === 'tieredSize'
@@ -28,30 +28,38 @@ export default function TierStep({ product, selectedTierId, onSelect }) {
         </p>
       </div>
 
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-        {product.tiers.map((tier) => {
-          const badge = isTieredSize
-            ? tier.priceLabel
-            : getLowestTierPrice(tier)
+      <div className="rounded-3xl border border-slate-100 bg-slate-50/60 p-4 sm:p-5">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+          {product.tiers.map((tier) => {
+            const badge = isTieredSize
+              ? tier.priceLabel
+              : getLowestTierPrice(tier)
 
-          const subtitle = isTieredSize
-            ? [tier.sizes, tier.bestFor ? `Best for: ${Array.isArray(tier.bestFor) ? tier.bestFor.join(', ') : tier.bestFor}` : null]
-                .filter(Boolean)
-                .join(' · ')
-            : tier.note
+            const subtitle = isTieredSize
+              ? [
+                  tier.sizes,
+                  tier.bestFor
+                    ? `Best for: ${Array.isArray(tier.bestFor) ? tier.bestFor.join(', ') : tier.bestFor}`
+                    : null,
+                ]
+                  .filter(Boolean)
+                  .join(' · ')
+              : tier.note
 
-          return (
-            <OptionCard
-              key={tier.id}
-              icon="Shapes"
-              title={tier.label}
-              subtitle={subtitle}
-              badge={badge}
-              selected={selectedTierId === tier.id}
-              onClick={() => onSelect(tier.id)}
-            />
-          )
-        })}
+            return (
+              <OptionCard
+                key={tier.id}
+                icon="Shapes"
+                title={tier.label}
+                subtitle={subtitle}
+                badge={badge}
+                categoryId={categoryId}
+                selected={selectedTierId === tier.id}
+                onClick={() => onSelect(tier.id)}
+              />
+            )
+          })}
+        </div>
       </div>
     </div>
   )
