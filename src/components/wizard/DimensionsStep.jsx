@@ -1,6 +1,24 @@
-export default function DimensionsStep({ product, width, height, onWidthChange, onHeightChange }) {
-  const area = parseFloat(width) * parseFloat(height)
-  const hasArea = !isNaN(area) && area > 0
+import { toSqFt } from '../../utils/pricingLogic'
+
+const UNIT_OPTIONS = [
+  { value: 'in', label: 'Inches (in)' },
+  { value: 'ft', label: 'Feet (ft)' },
+  { value: 'cm', label: 'Centimeters (cm)' },
+  { value: 'm',  label: 'Meters (m)' },
+]
+
+const WIDTH_PLACEHOLDERS = { in: '48', ft: '4', cm: '120', m: '1.2' }
+const HEIGHT_PLACEHOLDERS = { in: '24', ft: '2', cm: '60', m: '0.6' }
+
+export default function DimensionsStep({ product, width, height, unit, onWidthChange, onHeightChange, onUnitChange }) {
+  const sqFt = toSqFt(width, height, unit)
+  const hasArea = !isNaN(sqFt) && sqFt > 0
+
+  function handleUnitChange(newUnit) {
+    onUnitChange(newUnit)
+    onWidthChange('')
+    onHeightChange('')
+  }
 
   return (
     <div>
@@ -15,10 +33,25 @@ export default function DimensionsStep({ product, width, height, onWidthChange, 
       </div>
 
       <div className="rounded-2xl border border-slate-100 bg-white p-6 shadow-sm">
+        <div className="mb-4">
+          <label className="mb-1.5 block text-sm font-semibold text-slate-700">
+            Unit of measurement
+          </label>
+          <select
+            value={unit}
+            onChange={(e) => handleUnitChange(e.target.value)}
+            className="field"
+          >
+            {UNIT_OPTIONS.map((u) => (
+              <option key={u.value} value={u.value}>{u.label}</option>
+            ))}
+          </select>
+        </div>
+
         <div className="grid grid-cols-2 gap-4">
           <div>
             <label className="mb-1.5 block text-sm font-semibold text-slate-700">
-              Width (ft)
+              Width ({unit})
             </label>
             <input
               type="number"
@@ -26,13 +59,13 @@ export default function DimensionsStep({ product, width, height, onWidthChange, 
               step="0.1"
               value={width}
               onChange={(e) => onWidthChange(e.target.value)}
-              placeholder="e.g. 4"
+              placeholder={`e.g. ${WIDTH_PLACEHOLDERS[unit] ?? '10'}`}
               className="field"
             />
           </div>
           <div>
             <label className="mb-1.5 block text-sm font-semibold text-slate-700">
-              Height (ft)
+              Height ({unit})
             </label>
             <input
               type="number"
@@ -40,7 +73,7 @@ export default function DimensionsStep({ product, width, height, onWidthChange, 
               step="0.1"
               value={height}
               onChange={(e) => onHeightChange(e.target.value)}
-              placeholder="e.g. 2"
+              placeholder={`e.g. ${HEIGHT_PLACEHOLDERS[unit] ?? '10'}`}
               className="field"
             />
           </div>
@@ -49,12 +82,12 @@ export default function DimensionsStep({ product, width, height, onWidthChange, 
         {hasArea && (
           <div className="mt-4 rounded-xl bg-rose-50 px-4 py-3">
             <p className="text-sm font-semibold text-rose-700">
-              Calculated area: {area.toFixed(2)} sq ft
+              Calculated area: {sqFt.toFixed(2)} sq ft
             </p>
             {product?.minPerSqFt != null && (
               <p className="mt-0.5 text-xs text-rose-500">
-                Approx. ${Math.round(area * product.minPerSqFt).toLocaleString()} –{' '}
-                ${Math.round(area * product.maxPerSqFt).toLocaleString()} CAD
+                Approx. ${Math.round(sqFt * product.minPerSqFt).toLocaleString()} –{' '}
+                ${Math.round(sqFt * product.maxPerSqFt).toLocaleString()} CAD
               </p>
             )}
           </div>

@@ -28,6 +28,7 @@ export default function PricingWizard() {
   const [selectedSizeId, setSelectedSizeId] = useState('')
   const [width, setWidth] = useState('')
   const [height, setHeight] = useState('')
+  const [unit, setUnit] = useState('in')
 
   // Cascading resets on category change
   useEffect(() => {
@@ -82,6 +83,7 @@ export default function PricingWizard() {
     selectedSizeId,
     width,
     height,
+    unit,
   })
 
   const nextEnabled = useMemo(() => {
@@ -121,6 +123,7 @@ export default function PricingWizard() {
     setSelectedSizeId('')
     setWidth('')
     setHeight('')
+    setUnit('in')
     setStepIndex(0)
   }
 
@@ -154,8 +157,10 @@ export default function PricingWizard() {
             product={selectedProduct}
             width={width}
             height={height}
+            unit={unit}
             onWidthChange={setWidth}
             onHeightChange={setHeight}
+            onUnitChange={setUnit}
           />
         )
       case 'tier':
@@ -197,6 +202,7 @@ export default function PricingWizard() {
             selectedSizeId={selectedSizeId}
             width={width}
             height={height}
+            unit={unit}
             steps={steps}
             stepIndex={stepIndex}
             onGoToStep={goToStep}

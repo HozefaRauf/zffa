@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Check, Pencil } from 'lucide-react'
+import { toSqFt } from '../../utils/pricingLogic'
 
-function buildDetails({ category, product, selectedTier, selectedQuantity, selectedSizeId, width, height }) {
+function buildDetails({ category, product, selectedTier, selectedQuantity, selectedSizeId, width, height, unit }) {
   const details = []
 
   if (category) details.push({ label: 'Category', value: category.title })
@@ -27,9 +28,9 @@ function buildDetails({ category, product, selectedTier, selectedQuantity, selec
   }
 
   if (width && height) {
-    const area = parseFloat(width) * parseFloat(height)
-    if (!isNaN(area) && area > 0) {
-      details.push({ label: 'Dimensions', value: `${width} ft × ${height} ft (${area.toFixed(2)} sq ft)` })
+    const sqFt = toSqFt(width, height, unit)
+    if (!isNaN(sqFt) && sqFt > 0) {
+      details.push({ label: 'Dimensions', value: `${width} ${unit} × ${height} ${unit} (${sqFt.toFixed(2)} sq ft)` })
     }
   }
 
@@ -45,6 +46,7 @@ export default function ResultStep({
   selectedSizeId,
   width,
   height,
+  unit,
   steps,
   stepIndex,
   onGoToStep,
@@ -52,7 +54,7 @@ export default function ResultStep({
 }) {
   const [editOpen, setEditOpen] = useState(false)
 
-  const details = buildDetails({ category, product, selectedTier, selectedQuantity, selectedSizeId, width, height })
+  const details = buildDetails({ category, product, selectedTier, selectedQuantity, selectedSizeId, width, height, unit })
 
   const editableSteps = steps
     .map((key, idx) => ({ key, idx }))
@@ -70,7 +72,7 @@ export default function ResultStep({
   const stepValues = {
     category: category?.title,
     product: product?.title,
-    dimensions: width && height ? `${width} ft × ${height} ft` : null,
+    dimensions: width && height ? `${width} ${unit} × ${height} ${unit}` : null,
     quantity: selectedQuantity || null,
     tier: selectedTier?.label || null,
     size: selectedSizeId

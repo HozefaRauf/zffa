@@ -1,3 +1,17 @@
+const UNIT_TO_SQFT = {
+  in: 1 / 144,
+  ft: 1,
+  cm: 1 / 929.0304,
+  m: 10.7639,
+}
+
+export function toSqFt(width, height, unit = 'ft') {
+  const w = parseFloat(width)
+  const h = parseFloat(height)
+  if (isNaN(w) || isNaN(h)) return NaN
+  return w * h * (UNIT_TO_SQFT[unit] ?? 1)
+}
+
 export function getCategoryById(categories, categoryId) {
   return categories.find((category) => category.id === categoryId)
 }
@@ -11,7 +25,7 @@ export function getCurrentEstimate(product, state) {
     return { label: 'Choose a product to see an estimate', price: null }
   }
 
-  const { selectedTierId, selectedQuantity, selectedSizeId, width, height } = state
+  const { selectedTierId, selectedQuantity, selectedSizeId, width, height, unit } = state
 
   const staticPriceProductIds = ['vinyl-graphics', 'perforated-graphics', 'decals']
   if (staticPriceProductIds.includes(product.id)) {
@@ -29,7 +43,7 @@ export function getCurrentEstimate(product, state) {
       }
     }
 
-    const sizeValue = parseFloat(width) * parseFloat(height)
+    const sizeValue = toSqFt(width, height, unit)
     if (Number.isNaN(sizeValue) || sizeValue <= 0) {
       return { label: 'Provide valid dimensions', price: null }
     }
