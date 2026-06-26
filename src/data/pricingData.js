@@ -7,7 +7,7 @@ export const categories = [
     "products": [
       {
         "id": "box-sign",
-        "title": "Box Signs",
+        "title": "Box Sign",
         "description": "Modern illuminated box signage for storefront visibility.",
         "icon": "LayoutTemplate",
         "type": "area",
