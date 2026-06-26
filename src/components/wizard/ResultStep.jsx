@@ -141,7 +141,7 @@ export default function ResultStep({
         className="mt-6 flex w-full flex-col gap-3"
       >
         <a
-          href={`/contact?category=${encodeURIComponent(category?.id ?? '')}&product=${encodeURIComponent(product?.id ?? '')}`}
+          href="https://www.zffatrading.com/contact-us"
           className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-rose-600 px-6 py-3
             text-sm font-bold uppercase tracking-wider text-white shadow-sm transition-all duration-150
             hover:-translate-y-0.5 hover:bg-rose-700 hover:shadow-md active:translate-y-0 active:scale-[0.97]
