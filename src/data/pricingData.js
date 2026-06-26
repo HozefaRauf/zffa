@@ -251,7 +251,7 @@ export const categories = [
     "products": [
       {
         "id": "vinyl-banners",
-        "title": "Vinyl Banners",
+        "title": "Vinyl Banner",
         "description": "Weather-resistant banners for indoor and outdoor promotion.",
         "icon": "Flag",
         "type": "fixedRange",
