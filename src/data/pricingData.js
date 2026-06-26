@@ -1,909 +1,1552 @@
 export const categories = [
   {
-    id: 'store-front-signage',
-    title: 'Store Front Signage',
-    description: 'High-impact storefront and exterior sign solutions.',
-    icon: 'Store',
-    products: [
+    "id": "store-front-signage",
+    "title": "Store Front Signage",
+    "description": "High-impact storefront and exterior sign solutions.",
+    "icon": "Store",
+    "products": [
       {
-        id: 'box-sign',
-        title: 'Box Sign',
-        description: 'Modern illuminated box signage for storefront visibility.',
-        icon: 'LayoutTemplate',
-        type: 'area',
-        minPerSqFt: 60,
-        maxPerSqFt: 70,
-        note: 'Estimated per square foot pricing for standard panel construction.',
+        "id": "box-sign",
+        "title": "Box Signs",
+        "description": "Modern illuminated box signage for storefront visibility.",
+        "icon": "LayoutTemplate",
+        "type": "area",
+        "minPerSqFt": 60,
+        "maxPerSqFt": 70,
+        "note": "Estimated per square foot pricing for standard panel construction."
       },
       {
-        id: 'channel-letters',
-        title: 'Channel Letters',
-        description: 'Dimensional signage with illumination for premium storefronts.',
-        icon: 'Lightbulb',
-        type: 'area',
-        minPerSqFt: 70,
-        maxPerSqFt: 80,
-        note: 'Pricing applies to total sign area, including letter faces and returns.',
+        "id": "channel-letters",
+        "title": "Channel Letters",
+        "description": "Dimensional signage with illumination for premium storefronts.",
+        "icon": "Lightbulb",
+        "type": "area",
+        "minPerSqFt": 70,
+        "maxPerSqFt": 80,
+        "note": "Pricing applies to total sign area, including letter faces and returns."
       },
       {
-        id: 'a-frame-sign',
-        title: 'Standard A-Frame Sign',
-        description: 'Portable sidewalk signage built for retail and events.',
-        icon: 'Triangle',
-        type: 'fixedOptions',
-        options: [
-          { id: '18x24', label: '18x24 A-Frame Sign', priceLabel: '$109–$119 CAD' },
-          { id: '36x24', label: '36x24 A-Frame Sign', priceLabel: '$149–$169 CAD' },
+        "id": "a-frame-sign",
+        "title": "Standard A-Frame Sign",
+        "description": "Portable sidewalk signage built for retail and events.",
+        "icon": "Triangle",
+        "type": "fixedOptions",
+        "options": [
+          {
+            "id": "18x24",
+            "label": "18x24 A-Frame Sign",
+            "priceLabel": "$109–$119 CAD"
+          },
+          {
+            "id": "36x24",
+            "label": "36x24 A-Frame Sign",
+            "priceLabel": "$149–$169 CAD"
+          }
         ],
-        note: 'Standard hardware and full-color panels included in the estimate.',
+        "note": "Standard hardware and full-color panels included in the estimate."
       },
       {
-        id: 'sign-face-replacement',
-        title: 'Sign Face Replacement',
-        description: 'Refresh existing signage with new face panels and vinyl graphics.',
-        icon: 'Replace',
-        type: 'area',
-        minPerSqFt: 35,
-        maxPerSqFt: 40,
-        note: 'Estimate based on square footage of the sign face area.',
-      },
-    ],
+        "id": "sign-face-replacement",
+        "title": "Sign Face Replacement",
+        "description": "Refresh existing signage with new face panels and vinyl graphics.",
+        "icon": "Replace",
+        "type": "area",
+        "minPerSqFt": 35,
+        "maxPerSqFt": 40,
+        "note": "Estimate based on square footage of the sign face area."
+      }
+    ]
   },
   {
-    id: 'windows-and-graphics',
-    title: 'Windows & Graphics',
-    description: 'Window branding, floor vinyls, and retail graphics.',
-    icon: 'AppWindow',
-    products: [
+    "id": "windows-and-graphics",
+    "title": "Windows & Graphics",
+    "description": "Window branding, floor vinyls, and retail graphics.",
+    "icon": "AppWindow",
+    "products": [
       {
-        id: 'vinyl-graphics',
-        title: 'Vinyl Graphics',
-        description: 'Ground-level window graphics for retail and storefront messaging.',
-        icon: 'AppWindow',
-        type: 'area',
-        minPerSqFt: 9,
-        maxPerSqFt: 9,
-        priceLabel: 'Approx. $9 per sq. ft.',
+        "id": "vinyl-graphics",
+        "title": "Vinyl Graphics",
+        "description": "Ground-level window graphics for retail and storefront messaging.",
+        "icon": "AppWindow",
+        "type": "area",
+        "minPerSqFt": 9,
+        "maxPerSqFt": 9,
+        "priceLabel": "Approx. $9 per sq. ft."
       },
       {
-        id: 'perforated-graphics',
-        title: 'Perforated Graphics',
-        description: 'One-way vision perforated vinyl for windows and glass walls.',
-        icon: 'PanelLeft',
-        type: 'area',
-        minPerSqFt: 11,
-        maxPerSqFt: 11,
-        priceLabel: 'Approx. $11 per sq. ft.',
+        "id": "perforated-graphics",
+        "title": "Perforated Graphics",
+        "description": "One-way vision perforated vinyl for windows and glass walls.",
+        "icon": "PanelLeft",
+        "type": "area",
+        "minPerSqFt": 11,
+        "maxPerSqFt": 11,
+        "priceLabel": "Approx. $11 per sq. ft."
       },
       {
-        id: 'decals',
-        title: 'Decals',
-        description: 'Custom cut vinyl decals for windows, floors, and walls.',
-        icon: 'Sticker',
-        type: 'fixedRange',
-        priceLabel: 'Approx. $9 per sq. ft.',
-        note: 'Ground-level vinyl installation pricing.',
-      },
-    ],
+        "id": "decals",
+        "title": "Decals",
+        "description": "Custom cut vinyl decals for windows, floors, and walls.",
+        "icon": "Sticker",
+        "type": "fixedRange",
+        "priceLabel": "Approx. $9 per sq. ft.",
+        "note": "Ground-level vinyl installation pricing."
+      }
+    ]
   },
   {
-    id: 'vehicle-branding',
-    title: 'Custom Magnets',
-    description: 'Promotional, vehicle, and custom-shape magnet solutions.',
-    icon: 'Car',
-    products: [
+    "id": "vehicle-branding",
+    "title": "Custom Magnets",
+    "description": "Promotional, vehicle, and custom-shape magnet solutions.",
+    "icon": "Car",
+    "products": [
       {
-        id: 'promotional-magnets',
-        title: 'Promotional Magnets',
-        description: 'Affordable fridge and giveaway magnets for marketing campaigns.',
-        icon: 'Magnet',
-        type: 'quantity',
-        quantities: ['100', '250', '500', '1000', '2500', '5000'],
-        priceTable: [
-          { quantity: '100', range: '$80–$110' },
-          { quantity: '250', range: '$140–$190' },
-          { quantity: '500', range: '$220–$300' },
-          { quantity: '1000', range: '$350–$500' },
-          { quantity: '2500', range: '$700–$950' },
-          { quantity: '5000', range: '$1200–$1600' },
+        "id": "promotional-magnets",
+        "title": "Promotional Magnets",
+        "description": "Affordable fridge and giveaway magnets for marketing campaigns.",
+        "icon": "Magnet",
+        "type": "quantity",
+        "quantities": [
+          "100",
+          "250",
+          "500",
+          "1000",
+          "2500",
+          "5000"
         ],
-        note: 'Best for giveaways, real estate, and promotional campaigns.',
+        "priceTable": [
+          {
+            "quantity": "100",
+            "range": "$80–$110"
+          },
+          {
+            "quantity": "250",
+            "range": "$140–$190"
+          },
+          {
+            "quantity": "500",
+            "range": "$220–$300"
+          },
+          {
+            "quantity": "1000",
+            "range": "$350–$500"
+          },
+          {
+            "quantity": "2500",
+            "range": "$700–$950"
+          },
+          {
+            "quantity": "5000",
+            "range": "$1200–$1600"
+          }
+        ],
+        "note": "Best for giveaways, real estate, and promotional campaigns."
       },
       {
-        id: 'vehicle-magnets',
-        title: 'Vehicle Magnets',
-        description: 'Premium car magnets sized for personal and fleet branding.',
-        icon: 'CarFront',
-        type: 'size',
-        options: [
-          { id: 'small', label: 'Small (up to 12"×18")', priceLabel: '$55–$75' },
-          { id: 'medium', label: 'Medium (up to 18"×24")', priceLabel: '$80–$120' },
-          { id: 'large', label: 'Large (24"×24"+)', priceLabel: '$120–$180' },
-          { id: 'fleet', label: 'Fleet / Bulk Orders', priceLabel: 'Custom quote' },
+        "id": "vehicle-magnets",
+        "title": "Vehicle Magnets",
+        "description": "Premium car magnets sized for personal and fleet branding.",
+        "icon": "CarFront",
+        "type": "size",
+        "options": [
+          {
+            "id": "small",
+            "label": "Small (up to 12\"×18\")",
+            "priceLabel": "$55–$75"
+          },
+          {
+            "id": "medium",
+            "label": "Medium (up to 18\"×24\")",
+            "priceLabel": "$80–$120"
+          },
+          {
+            "id": "large",
+            "label": "Large (24\"×24\"+)",
+            "priceLabel": "$120–$180"
+          },
+          {
+            "id": "fleet",
+            "label": "Fleet / Bulk Orders",
+            "priceLabel": "Custom quote"
+          }
         ],
-        note: 'Used for vehicle wraps, fleets, and mobile branding applications.',
+        "note": "Used for vehicle wraps, fleets, and mobile branding applications."
       },
       {
-        id: 'car-magnets',
-        title: 'Car Magnets',
-        description: 'Premium 30mil magnets for vehicle branding, ideal for small-batch orders.',
-        icon: 'Car',
-        type: 'quantity',
-        quantities: ['1', '2–5', '6–10', '10+'],
-        priceTable: [
-          { quantity: '1', range: '$60–$90' },
-          { quantity: '2–5', range: '$50–$75 each' },
-          { quantity: '6–10', range: '$45–$65 each' },
-          { quantity: '10+', range: 'Custom quote' },
+        "id": "car-magnets",
+        "title": "Car Magnets",
+        "description": "Premium 30mil magnets for vehicle branding, ideal for small-batch orders.",
+        "icon": "Car",
+        "type": "quantity",
+        "quantities": [
+          "1",
+          "2–5",
+          "6–10",
+          "10+"
         ],
-        note: '30mil thickness for durable, high-impact vehicle branding. Typically ordered in 1–10 unit quantities.',
+        "priceTable": [
+          {
+            "quantity": "1",
+            "range": "$60–$90"
+          },
+          {
+            "quantity": "2–5",
+            "range": "$50–$75 each"
+          },
+          {
+            "quantity": "6–10",
+            "range": "$45–$65 each"
+          },
+          {
+            "quantity": "10+",
+            "range": "Custom quote"
+          }
+        ],
+        "note": "30mil thickness for durable, high-impact vehicle branding. Typically ordered in 1–10 unit quantities."
       },
       {
-        id: 'custom-shape-magnets',
-        title: 'Custom Shape Magnets',
-        description: 'Die-cut branding magnets made from high-quality 30mil stock.',
-        icon: 'Shapes',
-        type: 'quantity',
-        quantities: ['100', '250', '500', '1000', '2500'],
-        priceTable: [
-          { quantity: '100', range: '$120–$180' },
-          { quantity: '250', range: '$220–$320' },
-          { quantity: '500', range: '$350–$500' },
-          { quantity: '1000', range: '$600–$850' },
-          { quantity: '2500', range: 'Custom quote' },
+        "id": "custom-shape-magnets",
+        "title": "Custom Shape Magnets",
+        "description": "Die-cut branding magnets made from high-quality 30mil stock.",
+        "icon": "Shapes",
+        "type": "quantity",
+        "quantities": [
+          "100",
+          "250",
+          "500",
+          "1000",
+          "2500"
         ],
-        note: 'Ideal for branded merchandise, giveaways, and premium collateral.',
-      },
-    ],
+        "priceTable": [
+          {
+            "quantity": "100",
+            "range": "$120–$180"
+          },
+          {
+            "quantity": "250",
+            "range": "$220–$320"
+          },
+          {
+            "quantity": "500",
+            "range": "$350–$500"
+          },
+          {
+            "quantity": "1000",
+            "range": "$600–$850"
+          },
+          {
+            "quantity": "2500",
+            "range": "Custom quote"
+          }
+        ],
+        "note": "Ideal for branded merchandise, giveaways, and premium collateral."
+      }
+    ]
   },
   {
-    id: 'banners-and-large-format-printing',
-    title: 'Banners & Large Format Printing',
-    description: 'Flexible, portable, and rigid large-format marketing assets.',
-    icon: 'Flag',
-    products: [
+    "id": "banners-and-large-format-printing",
+    "title": "Banners & Large Format Printing",
+    "description": "Flexible, portable, and rigid large-format marketing assets.",
+    "icon": "Flag",
+    "products": [
       {
-        id: 'vinyl-banners',
-        title: 'Vinyl Banners',
-        description: 'Weather-resistant banners for indoor and outdoor promotion.',
-        icon: 'Flag',
-        type: 'fixedRange',
-        priceLabel: '$20–$170',
-        note: 'Print-only pricing based on standard banner sizes.',
+        "id": "vinyl-banners",
+        "title": "Vinyl Banners",
+        "description": "Weather-resistant banners for indoor and outdoor promotion.",
+        "icon": "Flag",
+        "type": "fixedRange",
+        "priceLabel": "$20–$170",
+        "note": "Print-only pricing based on standard banner sizes."
       },
       {
-        id: 'posters',
-        title: 'Posters',
-        description: 'Large posters for retail, events, and display walls.',
-        icon: 'Image',
-        type: 'fixedRange',
-        priceLabel: '$15–$90',
-        note: 'Print-only pricing based on standard poster sizes.',
+        "id": "posters",
+        "title": "Posters",
+        "description": "Large posters for retail, events, and display walls.",
+        "icon": "Image",
+        "type": "fixedRange",
+        "priceLabel": "$15–$90",
+        "note": "Print-only pricing based on standard poster sizes."
       },
       {
-        id: 'pull-up-banners',
-        title: 'Pull-up Banners',
-        description: 'Portable retractable banners with hardware and print.',
-        icon: 'GalleryVerticalEnd',
-        type: 'fixedRange',
-        priceLabel: '$80–$135',
-        note: 'Includes banner stand and full-color print.',
+        "id": "pull-up-banners",
+        "title": "Pull-up Banners",
+        "description": "Portable retractable banners with hardware and print.",
+        "icon": "GalleryVerticalEnd",
+        "type": "fixedRange",
+        "priceLabel": "$80–$135",
+        "note": "Includes banner stand and full-color print."
       },
       {
-        id: 'x-frame-banners',
-        title: 'X-Frame Banners',
-        description: 'Lightweight display banners ideal for trade show booths.',
-        icon: 'Columns2',
-        type: 'fixedRange',
-        priceLabel: '$60–$95',
-        note: 'Includes frame hardware plus printed graphic.',
+        "id": "x-frame-banners",
+        "title": "X-Frame Banners",
+        "description": "Lightweight display banners ideal for trade show booths.",
+        "icon": "Columns2",
+        "type": "fixedRange",
+        "priceLabel": "$60–$95",
+        "note": "Includes frame hardware plus printed graphic."
       },
       {
-        id: 'pop-up-displays',
-        title: 'Pop-up Displays',
-        description: 'Premium graphic walls for events and exhibition spaces.',
-        icon: 'PanelsTopLeft',
-        type: 'fixedRange',
-        priceLabel: '$305–$1230',
-        note: 'Large structural displays for trade shows and premium events.',
+        "id": "pop-up-displays",
+        "title": "Pop-up Displays",
+        "description": "Premium graphic walls for events and exhibition spaces.",
+        "icon": "PanelsTopLeft",
+        "type": "fixedRange",
+        "priceLabel": "$305–$1230",
+        "note": "Large structural displays for trade shows and premium events."
       },
       {
-        id: 'trade-show-displays',
-        title: 'Trade Show Displays',
-        description: 'Custom event booth and display solutions.',
-        icon: 'Presentation',
-        type: 'customQuote',
-        priceLabel: 'Contact us for pricing',
-        note: 'Pricing depends on configuration, size, and installation needs.',
+        "id": "trade-show-displays",
+        "title": "Trade Show Displays",
+        "description": "Custom event booth and display solutions.",
+        "icon": "Presentation",
+        "type": "customQuote",
+        "priceLabel": "Contact us for pricing",
+        "note": "Pricing depends on configuration, size, and installation needs."
       },
       {
-        id: 'flags',
-        title: 'Flags',
-        description: 'Tall outdoor flag branding for high-visibility signage.',
-        icon: 'FlagTriangleRight',
-        type: 'fixedRange',
-        priceLabel: '$100–$259',
-        note: 'Large structural flag solutions for events and exteriors.',
+        "id": "flags",
+        "title": "Flags",
+        "description": "Tall outdoor flag branding for high-visibility signage.",
+        "icon": "FlagTriangleRight",
+        "type": "fixedRange",
+        "priceLabel": "$100–$259",
+        "note": "Large structural flag solutions for events and exteriors."
       },
       {
-        id: 'foam-board-prints',
-        title: 'Foam Board Prints',
-        description: 'Rigid display panels for indoor signage and presentations.',
-        icon: 'Square',
-        type: 'fixedRange',
-        priceLabel: '$15–$60',
-        note: 'Indoor decorative and professional display prints.',
+        "id": "foam-board-prints",
+        "title": "Foam Board Prints",
+        "description": "Rigid display panels for indoor signage and presentations.",
+        "icon": "Square",
+        "type": "fixedRange",
+        "priceLabel": "$15–$60",
+        "note": "Indoor decorative and professional display prints."
       },
       {
-        id: 'canvas-prints',
-        title: 'Canvas Prints',
-        description: 'Professional canvas prints for gallery-style décor.',
-        icon: 'Frame',
-        type: 'fixedRange',
-        priceLabel: '$25–$80',
-        note: 'Indoor decorative and gallery-quality canvas printing.',
+        "id": "canvas-prints",
+        "title": "Canvas Prints",
+        "description": "Professional canvas prints for gallery-style décor.",
+        "icon": "Frame",
+        "type": "fixedRange",
+        "priceLabel": "$25–$80",
+        "note": "Indoor decorative and gallery-quality canvas printing."
       },
       {
-        id: 'custom-aluminum-signs',
-        title: 'Custom Aluminum Signs',
-        description: 'Durable weather-resistant signage for indoor & outdoor use.',
-        icon: 'Signpost',
-        type: 'tieredSize',
-        tiers: [
+        "id": "custom-aluminum-signs",
+        "title": "Custom Aluminum Signs",
+        "description": "Durable weather-resistant signage for indoor & outdoor use.",
+        "icon": "Signpost",
+        "type": "tieredSize",
+        "tiers": [
           {
-            id: 'aluminum-small',
-            label: 'Small Signs',
-            sizes: '6x6, 8x10, 12x12',
-            bestFor: ['Parking signs', 'Notices', 'Door signs'],
-            priceLabel: 'Starting at $29',
+            "id": "aluminum-small",
+            "label": "Small Signs",
+            "sizes": "6x6, 8x10, 12x12",
+            "bestFor": [
+              "Parking signs",
+              "Notices",
+              "Door signs"
+            ],
+            "priceLabel": "Starting at $29"
           },
           {
-            id: 'aluminum-medium',
-            label: 'Medium Signs',
-            sizes: '12x18, 18x24',
-            bestFor: ['Business signs', 'Directional signage'],
-            priceLabel: 'Starting at $69',
+            "id": "aluminum-medium",
+            "label": "Medium Signs",
+            "sizes": "12x18, 18x24",
+            "bestFor": [
+              "Business signs",
+              "Directional signage"
+            ],
+            "priceLabel": "Starting at $69"
           },
           {
-            id: 'aluminum-large',
-            label: 'Large Signs',
-            sizes: '24x24, 24x36',
-            bestFor: ['Outdoor branding', 'Property signage'],
-            priceLabel: 'Starting at $149',
-          },
+            "id": "aluminum-large",
+            "label": "Large Signs",
+            "sizes": "24x24, 24x36",
+            "bestFor": [
+              "Outdoor branding",
+              "Property signage"
+            ],
+            "priceLabel": "Starting at $149"
+          }
         ],
-        note: 'Final pricing depends on size, finishing, and mounting requirements.',
+        "note": "Final pricing depends on size, finishing, and mounting requirements."
       },
       {
-        id: 'coroplast-and-yard-signs',
-        title: 'Coroplast & Yard Signs',
-        description: 'Outdoor coroplast and yard signs with metal stakes for property and event branding.',
-        icon: 'SignpostBig',
-        type: 'tieredQuantity',
-        quantities: ['1–9', '10–24', '25–49', '50–99', '100+', '50+'],
-        tiers: [
-          {
-            id: 'standard-yard-signs',
-            label: 'Standard Yard Signs',
-            note: '18" × 24" – Most Popular.',
-            priceTable: [
-              { quantity: '1–9', range: '$25–$30 each' },
-              { quantity: '10–24', range: '$18–$22 each' },
-              { quantity: '25–49', range: '$14–$18 each' },
-              { quantity: '50–99', range: '$12–$15 each' },
-              { quantity: '100+', range: 'Custom quote' },
-            ],
-          },
-          {
-            id: 'small-yard-signs',
-            label: 'Small Yard Signs',
-            note: '6" × 24" signs.',
-            priceTable: [
-              { quantity: '1–9', range: '$20–$25 each' },
-              { quantity: '10–24', range: '$16–$20 each' },
-              { quantity: '25–49', range: '$13–$16 each' },
-              { quantity: '50+', range: '$11–$14 each' },
-            ],
-          },
-          {
-            id: 'large-yard-signs',
-            label: 'Large Yard Signs',
-            note: '48" × 48" signs.',
-            priceTable: [
-              { quantity: '1–9', range: '$65–$85 each' },
-              { quantity: '10–24', range: '$55–$70 each' },
-              { quantity: '25–49', range: '$45–$60 each' },
-              { quantity: '50+', range: 'Custom quote' },
-            ],
-          },
+        "id": "coroplast-and-yard-signs",
+        "title": "Coroplast & Yard Signs",
+        "description": "Outdoor coroplast and yard signs with metal stakes for property and event branding.",
+        "icon": "SignpostBig",
+        "type": "tieredQuantity",
+        "quantities": [
+          "1–9",
+          "10–24",
+          "25–49",
+          "50–99",
+          "100+",
+          "50+"
         ],
-        note: 'Includes full-color printing and metal stakes.',
-      },
-    ],
+        "tiers": [
+          {
+            "id": "standard-yard-signs",
+            "label": "Standard Yard Signs",
+            "note": "18\" × 24\" – Most Popular.",
+            "priceTable": [
+              {
+                "quantity": "1–9",
+                "range": "$25–$30 each"
+              },
+              {
+                "quantity": "10–24",
+                "range": "$18–$22 each"
+              },
+              {
+                "quantity": "25–49",
+                "range": "$14–$18 each"
+              },
+              {
+                "quantity": "50–99",
+                "range": "$12–$15 each"
+              },
+              {
+                "quantity": "100+",
+                "range": "Custom quote"
+              }
+            ]
+          },
+          {
+            "id": "small-yard-signs",
+            "label": "Small Yard Signs",
+            "note": "6\" × 24\" signs.",
+            "priceTable": [
+              {
+                "quantity": "1–9",
+                "range": "$20–$25 each"
+              },
+              {
+                "quantity": "10–24",
+                "range": "$16–$20 each"
+              },
+              {
+                "quantity": "25–49",
+                "range": "$13–$16 each"
+              },
+              {
+                "quantity": "50+",
+                "range": "$11–$14 each"
+              }
+            ]
+          },
+          {
+            "id": "large-yard-signs",
+            "label": "Large Yard Signs",
+            "note": "48\" × 48\" signs.",
+            "priceTable": [
+              {
+                "quantity": "1–9",
+                "range": "$65–$85 each"
+              },
+              {
+                "quantity": "10–24",
+                "range": "$55–$70 each"
+              },
+              {
+                "quantity": "25–49",
+                "range": "$45–$60 each"
+              },
+              {
+                "quantity": "50+",
+                "range": "Custom quote"
+              }
+            ]
+          }
+        ],
+        "note": "Includes full-color printing and metal stakes."
+      }
+    ]
   },
   {
-    id: 'promotional-and-business-printing',
-    title: 'Promotional & Business Printing',
-    description: 'Print production for branded collateral, mailers, and packaging.',
-    icon: 'Printer',
-    products: [
+    "id": "promotional-and-business-printing",
+    "title": "Promotional & Business Printing",
+    "description": "Print production for branded collateral, mailers, and packaging.",
+    "icon": "Printer",
+    "products": [
       {
-        id: 'business-cards',
-        title: 'Business Cards',
-        description: 'Tiered business card pricing based on quality and finish.',
-        icon: 'IdCard',
-        type: 'tieredQuantity',
-        quantities: ['100', '250', '500', '1000'],
-        tiers: [
-          {
-            id: 'standard-business-cards',
-            label: 'Standard Business Cards (Most Popular)',
-            note: 'H14pt Matte, 16pt Matte, Gloss, AQ Coating.',
-            priceTable: [
-              { quantity: '100', range: '$25–$35' },
-              { quantity: '250', range: '$40–$55' },
-              { quantity: '500', range: '$55–$75' },
-              { quantity: '1000', range: '$80–$110' },
-            ],
-          },
-          {
-            id: 'premium-business-cards',
-            label: 'Premium Business Cards',
-            note: '18pt Silk Laminated, 18pt Matte Laminated, Thicker Stock.',
-            priceTable: [
-              { quantity: '100', range: '$50–$70' },
-              { quantity: '250', range: '$80–$110' },
-              { quantity: '500', range: '$110–$150' },
-              { quantity: '1000', range: '$160–$220' },
-            ],
-          },
-          {
-            id: 'luxury-business-cards',
-            label: 'Luxury / Specialty Cards',
-            note: 'Spot UV, foil, die-cut, and soft-touch premium finishes.',
-            priceTable: [
-              { quantity: '100', range: '$90–$130' },
-              { quantity: '250', range: '$150–$220' },
-              { quantity: '500', range: '$220–$320' },
-              { quantity: '1000', range: 'Custom quote' },
-            ],
-          },
+        "id": "business-cards",
+        "title": "Business Cards",
+        "description": "Tiered business card pricing based on quality and finish.",
+        "icon": "IdCard",
+        "type": "tieredQuantity",
+        "quantities": [
+          "100",
+          "250",
+          "500",
+          "1000"
         ],
-        note: 'Choose a category based on quality and finish. Final pricing may vary depending on specifications.',
+        "tiers": [
+          {
+            "id": "standard-business-cards",
+            "label": "Standard Business Cards (Most Popular)",
+            "note": "H14pt Matte, 16pt Matte, Gloss, AQ Coating.",
+            "priceTable": [
+              {
+                "quantity": "100",
+                "range": "$25–$35"
+              },
+              {
+                "quantity": "250",
+                "range": "$40–$55"
+              },
+              {
+                "quantity": "500",
+                "range": "$55–$75"
+              },
+              {
+                "quantity": "1000",
+                "range": "$80–$110"
+              }
+            ]
+          },
+          {
+            "id": "premium-business-cards",
+            "label": "Premium Business Cards",
+            "note": "18pt Silk Laminated, 18pt Matte Laminated, Thicker Stock.",
+            "priceTable": [
+              {
+                "quantity": "100",
+                "range": "$50–$70"
+              },
+              {
+                "quantity": "250",
+                "range": "$80–$110"
+              },
+              {
+                "quantity": "500",
+                "range": "$110–$150"
+              },
+              {
+                "quantity": "1000",
+                "range": "$160–$220"
+              }
+            ]
+          },
+          {
+            "id": "luxury-business-cards",
+            "label": "Luxury / Specialty Cards",
+            "note": "Spot UV, foil, die-cut, and soft-touch premium finishes.",
+            "priceTable": [
+              {
+                "quantity": "100",
+                "range": "$90–$130"
+              },
+              {
+                "quantity": "250",
+                "range": "$150–$220"
+              },
+              {
+                "quantity": "500",
+                "range": "$220–$320"
+              },
+              {
+                "quantity": "1000",
+                "range": "Custom quote"
+              }
+            ]
+          }
+        ],
+        "note": "Choose a category based on quality and finish. Final pricing may vary depending on specifications."
       },
       {
-        id: 'flyers',
-        title: 'Flyers',
-        description: 'Standard and premium flyers for campaigns and promotions.',
-        icon: 'FileImage',
-        type: 'tieredQuantity',
-        quantities: ['100', '250', '500', '1000', '2500', '5000'],
-        tiers: [
-          {
-            id: 'standard-flyers',
-            label: 'Standard',
-            note: '100lb gloss or matte stock. Standard sizes 8.5"×11", 5.5"×8.5".',
-            priceTable: [
-              { quantity: '100', range: '$45–$65' },
-              { quantity: '250', range: '$70–$100' },
-              { quantity: '500', range: '$100–$140' },
-              { quantity: '1000', range: '$140–$200' },
-              { quantity: '2500', range: '$250–$350' },
-              { quantity: '5000', range: '$400–$550' },
-            ],
-          },
-          {
-            id: 'premium-flyers',
-            label: 'Premium',
-            note: 'UV coating, thicker stock, and higher-impact finishes.',
-            priceTable: [
-              { quantity: '100', range: '$70–$100' },
-              { quantity: '250', range: '$110–$150' },
-              { quantity: '500', range: '$150–$220' },
-              { quantity: '1000', range: '$220–$320' },
-              { quantity: '2500', range: '$350–$500' },
-              { quantity: '5000', range: '$550–$750' },
-            ],
-          },
+        "id": "flyers",
+        "title": "Flyers",
+        "description": "Standard and premium flyers for campaigns and promotions.",
+        "icon": "FileImage",
+        "type": "tieredQuantity",
+        "quantities": [
+          "100",
+          "250",
+          "500",
+          "1000",
+          "2500",
+          "5000"
         ],
-        note: 'Pricing based on standard sizes (e.g., 8.5" × 11"). Custom sizes and finishes may vary.',
+        "tiers": [
+          {
+            "id": "standard-flyers",
+            "label": "Standard",
+            "note": "100lb gloss or matte stock. Standard sizes 8.5\"×11\", 5.5\"×8.5\".",
+            "priceTable": [
+              {
+                "quantity": "100",
+                "range": "$45–$65"
+              },
+              {
+                "quantity": "250",
+                "range": "$70–$100"
+              },
+              {
+                "quantity": "500",
+                "range": "$100–$140"
+              },
+              {
+                "quantity": "1000",
+                "range": "$140–$200"
+              },
+              {
+                "quantity": "2500",
+                "range": "$250–$350"
+              },
+              {
+                "quantity": "5000",
+                "range": "$400–$550"
+              }
+            ]
+          },
+          {
+            "id": "premium-flyers",
+            "label": "Premium",
+            "note": "UV coating, thicker stock, and higher-impact finishes.",
+            "priceTable": [
+              {
+                "quantity": "100",
+                "range": "$70–$100"
+              },
+              {
+                "quantity": "250",
+                "range": "$110–$150"
+              },
+              {
+                "quantity": "500",
+                "range": "$150–$220"
+              },
+              {
+                "quantity": "1000",
+                "range": "$220–$320"
+              },
+              {
+                "quantity": "2500",
+                "range": "$350–$500"
+              },
+              {
+                "quantity": "5000",
+                "range": "$550–$750"
+              }
+            ]
+          }
+        ],
+        "note": "Pricing based on standard sizes (e.g., 8.5\" × 11\"). Custom sizes and finishes may vary."
       },
       {
-        id: 'brochures',
-        title: 'Brochures',
-        description: 'Tri-fold and bi-fold brochures for brand storytelling.',
-        icon: 'BookOpen',
-        type: 'tieredQuantity',
-        quantities: ['100', '250', '500', '1000', '2500', '5000'],
-        tiers: [
-          {
-            id: 'standard-brochures',
-            label: 'Standard',
-            note: '100lb gloss or matte stock with standard folding.',
-            priceTable: [
-              { quantity: '100', range: '$90–$120' },
-              { quantity: '250', range: '$130–$180' },
-              { quantity: '500', range: '$180–$250' },
-              { quantity: '1000', range: '$250–$350' },
-              { quantity: '2500', range: '$450–$650' },
-              { quantity: '5000', range: '$700–$950' },
-            ],
-          },
-          {
-            id: 'premium-brochures',
-            label: 'Premium',
-            note: 'High-gloss UV finish and premium stock for elevated presentation.',
-            priceTable: [
-              { quantity: '100', range: '$120–$160' },
-              { quantity: '250', range: '$180–$250' },
-              { quantity: '500', range: '$250–$350' },
-              { quantity: '1000', range: '$350–$500' },
-              { quantity: '2500', range: '$650–$900' },
-              { quantity: '5000', range: '$950–$1300' },
-            ],
-          },
+        "id": "brochures",
+        "title": "Brochures",
+        "description": "Tri-fold and bi-fold brochures for brand storytelling.",
+        "icon": "BookOpen",
+        "type": "tieredQuantity",
+        "quantities": [
+          "100",
+          "250",
+          "500",
+          "1000",
+          "2500",
+          "5000"
         ],
-        note: 'Includes standard folding. Custom sizes and specialty folds may affect pricing.',
+        "tiers": [
+          {
+            "id": "standard-brochures",
+            "label": "Standard",
+            "note": "100lb gloss or matte stock with standard folding.",
+            "priceTable": [
+              {
+                "quantity": "100",
+                "range": "$90–$120"
+              },
+              {
+                "quantity": "250",
+                "range": "$130–$180"
+              },
+              {
+                "quantity": "500",
+                "range": "$180–$250"
+              },
+              {
+                "quantity": "1000",
+                "range": "$250–$350"
+              },
+              {
+                "quantity": "2500",
+                "range": "$450–$650"
+              },
+              {
+                "quantity": "5000",
+                "range": "$700–$950"
+              }
+            ]
+          },
+          {
+            "id": "premium-brochures",
+            "label": "Premium",
+            "note": "High-gloss UV finish and premium stock for elevated presentation.",
+            "priceTable": [
+              {
+                "quantity": "100",
+                "range": "$120–$160"
+              },
+              {
+                "quantity": "250",
+                "range": "$180–$250"
+              },
+              {
+                "quantity": "500",
+                "range": "$250–$350"
+              },
+              {
+                "quantity": "1000",
+                "range": "$350–$500"
+              },
+              {
+                "quantity": "2500",
+                "range": "$650–$900"
+              },
+              {
+                "quantity": "5000",
+                "range": "$950–$1300"
+              }
+            ]
+          }
+        ],
+        "note": "Includes standard folding. Custom sizes and specialty folds may affect pricing."
       },
       {
-        id: 'postcards',
-        title: 'Postcards',
-        description: 'Direct-mail and promotional postcards for campaigns.',
-        icon: 'MailOpen',
-        type: 'tieredQuantity',
-        quantities: ['100', '250', '500', '1000', '2500', '5000'],
-        tiers: [
-          {
-            id: 'standard-postcards',
-            label: 'Standard',
-            note: '14pt / 16pt matte or AQ stock. Standard sizes 4"×6", 5"×7".',
-            priceTable: [
-              { quantity: '100', range: '$40–$60' },
-              { quantity: '250', range: '$65–$90' },
-              { quantity: '500', range: '$90–$130' },
-              { quantity: '1000', range: '$130–$180' },
-              { quantity: '2500', range: '$220–$320' },
-              { quantity: '5000', range: '$350–$500' },
-            ],
-          },
-          {
-            id: 'premium-postcards',
-            label: 'Premium',
-            note: 'UV coating and laminated finishes for a richer appearance.',
-            priceTable: [
-              { quantity: '100', range: '$60–$90' },
-              { quantity: '250', range: '$100–$140' },
-              { quantity: '500', range: '$140–$200' },
-              { quantity: '1000', range: '$200–$300' },
-              { quantity: '2500', range: '$350–$500' },
-              { quantity: '5000', range: '$550–$750' },
-            ],
-          },
+        "id": "postcards",
+        "title": "Postcards",
+        "description": "Direct-mail and promotional postcards for campaigns.",
+        "icon": "MailOpen",
+        "type": "tieredQuantity",
+        "quantities": [
+          "100",
+          "250",
+          "500",
+          "1000",
+          "2500",
+          "5000"
         ],
-        note: 'Pricing based on standard sizes. Custom sizes and finishes may vary.',
+        "tiers": [
+          {
+            "id": "standard-postcards",
+            "label": "Standard",
+            "note": "14pt / 16pt matte or AQ stock. Standard sizes 4\"×6\", 5\"×7\".",
+            "priceTable": [
+              {
+                "quantity": "100",
+                "range": "$40–$60"
+              },
+              {
+                "quantity": "250",
+                "range": "$65–$90"
+              },
+              {
+                "quantity": "500",
+                "range": "$90–$130"
+              },
+              {
+                "quantity": "1000",
+                "range": "$130–$180"
+              },
+              {
+                "quantity": "2500",
+                "range": "$220–$320"
+              },
+              {
+                "quantity": "5000",
+                "range": "$350–$500"
+              }
+            ]
+          },
+          {
+            "id": "premium-postcards",
+            "label": "Premium",
+            "note": "UV coating and laminated finishes for a richer appearance.",
+            "priceTable": [
+              {
+                "quantity": "100",
+                "range": "$60–$90"
+              },
+              {
+                "quantity": "250",
+                "range": "$100–$140"
+              },
+              {
+                "quantity": "500",
+                "range": "$140–$200"
+              },
+              {
+                "quantity": "1000",
+                "range": "$200–$300"
+              },
+              {
+                "quantity": "2500",
+                "range": "$350–$500"
+              },
+              {
+                "quantity": "5000",
+                "range": "$550–$750"
+              }
+            ]
+          }
+        ],
+        "note": "Pricing based on standard sizes. Custom sizes and finishes may vary."
       },
       {
-        id: 'booklets',
-        title: 'Booklets',
-        description: 'Saddle-stitched booklets for catalogs, guides, and portfolios.',
-        icon: 'Notebook',
-        type: 'tieredQuantity',
-        quantities: ['100', '250', '500', '1000'],
-        tiers: [
-          {
-            id: 'standard-booklets',
-            label: 'Standard',
-            note: '8–20 pages saddle-stitched with gloss or silk paper.',
-            priceTable: [
-              { quantity: '100', range: '$180–$250' },
-              { quantity: '250', range: '$350–$500' },
-              { quantity: '500', range: '$600–$850' },
-              { quantity: '1000', range: '$1000–$1400' },
-            ],
-          },
-          {
-            id: 'premium-booklets',
-            label: 'Premium',
-            note: '20–40 pages with higher quality stock and finishes.',
-            priceTable: [
-              { quantity: '100', range: '$300–$450' },
-              { quantity: '250', range: '$600–$850' },
-              { quantity: '500', range: '$1000–$1400' },
-              { quantity: '1000', range: '$1600–$2200' },
-            ],
-          },
-          {
-            id: 'catalog-booklets',
-            label: 'High-End / Catalog',
-            note: '40+ pages for product catalogs and premium brand materials.',
-            priceTable: [
-              { quantity: '100', range: '$500–$800' },
-              { quantity: '250', range: '$1000–$1600' },
-              { quantity: '500', range: '$1800–$2600' },
-              { quantity: '1000', range: 'Custom Quote' },
-            ],
-          },
+        "id": "booklets",
+        "title": "Booklets",
+        "description": "Saddle-stitched booklets for catalogs, guides, and portfolios.",
+        "icon": "Notebook",
+        "type": "tieredQuantity",
+        "quantities": [
+          "100",
+          "250",
+          "500",
+          "1000"
         ],
-        note: 'Pricing based on typical page ranges. Final quote depends on number of pages and specifications.',
+        "tiers": [
+          {
+            "id": "standard-booklets",
+            "label": "Standard",
+            "note": "8–20 pages saddle-stitched with gloss or silk paper.",
+            "priceTable": [
+              {
+                "quantity": "100",
+                "range": "$180–$250"
+              },
+              {
+                "quantity": "250",
+                "range": "$350–$500"
+              },
+              {
+                "quantity": "500",
+                "range": "$600–$850"
+              },
+              {
+                "quantity": "1000",
+                "range": "$1000–$1400"
+              }
+            ]
+          },
+          {
+            "id": "premium-booklets",
+            "label": "Premium",
+            "note": "20–40 pages with higher quality stock and finishes.",
+            "priceTable": [
+              {
+                "quantity": "100",
+                "range": "$300–$450"
+              },
+              {
+                "quantity": "250",
+                "range": "$600–$850"
+              },
+              {
+                "quantity": "500",
+                "range": "$1000–$1400"
+              },
+              {
+                "quantity": "1000",
+                "range": "$1600–$2200"
+              }
+            ]
+          },
+          {
+            "id": "catalog-booklets",
+            "label": "High-End / Catalog",
+            "note": "40+ pages for product catalogs and premium brand materials.",
+            "priceTable": [
+              {
+                "quantity": "100",
+                "range": "$500–$800"
+              },
+              {
+                "quantity": "250",
+                "range": "$1000–$1600"
+              },
+              {
+                "quantity": "500",
+                "range": "$1800–$2600"
+              },
+              {
+                "quantity": "1000",
+                "range": "Custom Quote"
+              }
+            ]
+          }
+        ],
+        "note": "Pricing based on typical page ranges. Final quote depends on number of pages and specifications."
       },
       {
-        id: 'presentation-folders',
-        title: 'Presentation Folders',
-        description: 'Custom folders with pockets for proposals and sales kits.',
-        icon: 'FolderOpen',
-        type: 'tieredQuantity',
-        quantities: ['100', '250', '500', '1000'],
-        tiers: [
-          {
-            id: 'standard-folders',
-            label: 'Standard',
-            note: '14pt / 16pt stock with matte, AQ, or UV finish. Includes standard pockets and full-color printing.',
-            priceTable: [
-              { quantity: '100', range: '$220–$300' },
-              { quantity: '250', range: '$400–$550' },
-              { quantity: '500', range: '$700–$950' },
-              { quantity: '1000', range: '$1200–$1600' },
-            ],
-          },
-          {
-            id: 'premium-folders',
-            label: 'Premium',
-            note: 'Laminated matte or silk finishes with thicker stock. Includes standard pockets and full-color printing.',
-            priceTable: [
-              { quantity: '100', range: '$300–$420' },
-              { quantity: '250', range: '$550–$750' },
-              { quantity: '500', range: '$950–$1300' },
-              { quantity: '1000', range: '$1600–$2200' },
-            ],
-          },
-          {
-            id: 'luxury-folders',
-            label: 'Luxury / Specialty',
-            note: 'Spot UV, foil, soft-touch, and custom die-cut pockets. Custom finishes and specialty options may affect pricing.',
-            priceTable: [
-              { quantity: '100', range: '$450–$700' },
-              { quantity: '250', range: '$900–$1400' },
-              { quantity: '500', range: '$1600–$2400' },
-              { quantity: '1000', range: 'Custom quote' },
-            ],
-          },
+        "id": "presentation-folders",
+        "title": "Presentation Folders",
+        "description": "Custom folders with pockets for proposals and sales kits.",
+        "icon": "FolderOpen",
+        "type": "tieredQuantity",
+        "quantities": [
+          "100",
+          "250",
+          "500",
+          "1000"
         ],
-        note: 'Includes standard pockets and full-color printing. Custom finishes and specialty options may affect pricing.',
+        "tiers": [
+          {
+            "id": "standard-folders",
+            "label": "Standard",
+            "note": "14pt / 16pt stock with matte, AQ, or UV finish. Includes standard pockets and full-color printing.",
+            "priceTable": [
+              {
+                "quantity": "100",
+                "range": "$220–$300"
+              },
+              {
+                "quantity": "250",
+                "range": "$400–$550"
+              },
+              {
+                "quantity": "500",
+                "range": "$700–$950"
+              },
+              {
+                "quantity": "1000",
+                "range": "$1200–$1600"
+              }
+            ]
+          },
+          {
+            "id": "premium-folders",
+            "label": "Premium",
+            "note": "Laminated matte or silk finishes with thicker stock. Includes standard pockets and full-color printing.",
+            "priceTable": [
+              {
+                "quantity": "100",
+                "range": "$300–$420"
+              },
+              {
+                "quantity": "250",
+                "range": "$550–$750"
+              },
+              {
+                "quantity": "500",
+                "range": "$950–$1300"
+              },
+              {
+                "quantity": "1000",
+                "range": "$1600–$2200"
+              }
+            ]
+          },
+          {
+            "id": "luxury-folders",
+            "label": "Luxury / Specialty",
+            "note": "Spot UV, foil, soft-touch, and custom die-cut pockets. Custom finishes and specialty options may affect pricing.",
+            "priceTable": [
+              {
+                "quantity": "100",
+                "range": "$450–$700"
+              },
+              {
+                "quantity": "250",
+                "range": "$900–$1400"
+              },
+              {
+                "quantity": "500",
+                "range": "$1600–$2400"
+              },
+              {
+                "quantity": "1000",
+                "range": "Custom quote"
+              }
+            ]
+          }
+        ],
+        "note": "Includes standard pockets and full-color printing. Custom finishes and specialty options may affect pricing."
       },
       {
-        id: 'door-hangers',
-        title: 'Door Hangers',
-        description: 'Custom door hangers for hospitality, real estate, and events.',
-        icon: 'DoorOpen',
-        type: 'tieredQuantity',
-        quantities: ['100', '250', '500', '1000', '2500'],
-        tiers: [
-          {
-            id: 'standard-door-hangers',
-            label: 'Standard',
-            note: '14pt matte or AQ in standard 4.25"×11" size. Includes die-cut door hole and full-color printing.',
-            priceTable: [
-              { quantity: '100', range: '$70–$100' },
-              { quantity: '250', range: '$110–$150' },
-              { quantity: '500', range: '$160–$220' },
-              { quantity: '1000', range: '$220–$320' },
-              { quantity: '2500', range: '$400–$600' },
-            ],
-          },
-          {
-            id: 'premium-door-hangers',
-            label: 'Premium',
-            note: 'UV coating and higher-end finishing for brand impact. Includes die-cut door hole and full-color printing.',
-            priceTable: [
-              { quantity: '100', range: '$100–$140' },
-              { quantity: '250', range: '$150–$220' },
-              { quantity: '500', range: '$220–$320' },
-              { quantity: '1000', range: '$320–$450' },
-              { quantity: '2500', range: '$600–$850' },
-            ],
-          },
+        "id": "door-hangers",
+        "title": "Door Hangers",
+        "description": "Custom door hangers for hospitality, real estate, and events.",
+        "icon": "DoorOpen",
+        "type": "tieredQuantity",
+        "quantities": [
+          "100",
+          "250",
+          "500",
+          "1000",
+          "2500"
         ],
-        note: 'Includes die-cut door hole and full-color printing. Custom sizes or finishes may affect pricing.',
+        "tiers": [
+          {
+            "id": "standard-door-hangers",
+            "label": "Standard",
+            "note": "14pt matte or AQ in standard 4.25\"×11\" size. Includes die-cut door hole and full-color printing.",
+            "priceTable": [
+              {
+                "quantity": "100",
+                "range": "$70–$100"
+              },
+              {
+                "quantity": "250",
+                "range": "$110–$150"
+              },
+              {
+                "quantity": "500",
+                "range": "$160–$220"
+              },
+              {
+                "quantity": "1000",
+                "range": "$220–$320"
+              },
+              {
+                "quantity": "2500",
+                "range": "$400–$600"
+              }
+            ]
+          },
+          {
+            "id": "premium-door-hangers",
+            "label": "Premium",
+            "note": "UV coating and higher-end finishing for brand impact. Includes die-cut door hole and full-color printing.",
+            "priceTable": [
+              {
+                "quantity": "100",
+                "range": "$100–$140"
+              },
+              {
+                "quantity": "250",
+                "range": "$150–$220"
+              },
+              {
+                "quantity": "500",
+                "range": "$220–$320"
+              },
+              {
+                "quantity": "1000",
+                "range": "$320–$450"
+              },
+              {
+                "quantity": "2500",
+                "range": "$600–$850"
+              }
+            ]
+          }
+        ],
+        "note": "Includes die-cut door hole and full-color printing. Custom sizes or finishes may affect pricing."
       },
       {
-        id: 'stickers-roll-labels',
-        title: 'Stickers / Roll Labels',
-        description: 'Custom labels for packaging, promotions, and product branding.',
-        icon: 'Tag',
-        type: 'tieredQuantity',
-        quantities: ['100', '250', '500', '1000', '2500', '5000+'],
-        tiers: [
-          {
-            id: 'standard-labels',
-            label: 'Standard Labels',
-            note: 'Paper labels for indoor product packaging and giveaways.',
-            priceTable: [
-              { quantity: '100', range: '$0.80–$1.20 each' },
-              { quantity: '250', range: '$0.60–$0.90 each' },
-              { quantity: '500', range: '$0.45–$0.70 each' },
-              { quantity: '1000', range: '$0.30–$0.50 each' },
-              { quantity: '2500', range: '$0.25–$0.40 each' },
-              { quantity: '5000+', range: 'Custom quote' },
-            ],
-          },
-          {
-            id: 'premium-labels',
-            label: 'Premium Labels',
-            note: 'Waterproof BOPP labels for food, beverage, and outdoor use.',
-            priceTable: [
-              { quantity: '100', range: '$1.20–$1.80 each' },
-              { quantity: '250', range: '$0.90–$1.40 each' },
-              { quantity: '500', range: '$0.70–$1.10 each' },
-              { quantity: '1000', range: '$0.50–$0.80 each' },
-              { quantity: '2500', range: '$0.40–$0.65 each' },
-              { quantity: '5000+', range: 'Custom quote' },
-            ],
-          },
+        "id": "stickers-roll-labels",
+        "title": "Stickers / Roll Labels",
+        "description": "Custom labels for packaging, promotions, and product branding.",
+        "icon": "Tag",
+        "type": "tieredQuantity",
+        "quantities": [
+          "100",
+          "250",
+          "500",
+          "1000",
+          "2500",
+          "5000+"
         ],
-        note: 'Pricing varies based on size, material, and quantity. Includes full-color printing.',
+        "tiers": [
+          {
+            "id": "standard-labels",
+            "label": "Standard Labels",
+            "note": "Paper labels for indoor product packaging and giveaways.",
+            "priceTable": [
+              {
+                "quantity": "100",
+                "range": "$0.80–$1.20 each"
+              },
+              {
+                "quantity": "250",
+                "range": "$0.60–$0.90 each"
+              },
+              {
+                "quantity": "500",
+                "range": "$0.45–$0.70 each"
+              },
+              {
+                "quantity": "1000",
+                "range": "$0.30–$0.50 each"
+              },
+              {
+                "quantity": "2500",
+                "range": "$0.25–$0.40 each"
+              },
+              {
+                "quantity": "5000+",
+                "range": "Custom quote"
+              }
+            ]
+          },
+          {
+            "id": "premium-labels",
+            "label": "Premium Labels",
+            "note": "Waterproof BOPP labels for food, beverage, and outdoor use.",
+            "priceTable": [
+              {
+                "quantity": "100",
+                "range": "$1.20–$1.80 each"
+              },
+              {
+                "quantity": "250",
+                "range": "$0.90–$1.40 each"
+              },
+              {
+                "quantity": "500",
+                "range": "$0.70–$1.10 each"
+              },
+              {
+                "quantity": "1000",
+                "range": "$0.50–$0.80 each"
+              },
+              {
+                "quantity": "2500",
+                "range": "$0.40–$0.65 each"
+              },
+              {
+                "quantity": "5000+",
+                "range": "Custom quote"
+              }
+            ]
+          }
+        ],
+        "note": "Pricing varies based on size, material, and quantity. Includes full-color printing."
       },
       {
-        id: 'tickets',
-        title: 'Tickets',
-        description: 'Sequentially numbered tickets for events, fundraisers, and admissions.',
-        icon: 'Ticket',
-        type: 'tieredQuantity',
-        quantities: ['100', '250', '500', '1000', '2500', '5000'],
-        tiers: [
-          {
-            id: 'standard-tickets',
-            label: 'Standard Numbered Tickets',
-            note: '14pt stock with optional perforation and single numbering field.',
-            priceTable: [
-              { quantity: '100', range: '$80–$110' },
-              { quantity: '250', range: '$140–$190' },
-              { quantity: '500', range: '$220–$300' },
-              { quantity: '1000', range: '$350–$500' },
-              { quantity: '2500', range: '$700–$950' },
-              { quantity: '5000', range: '$1200–$1600' },
-            ],
-          },
-          {
-            id: 'premium-tickets',
-            label: 'Premium Event Tickets',
-            note: 'Double-sided printing and multiple numbering fields for premium events.',
-            priceTable: [
-              { quantity: '100', range: '$110–$150' },
-              { quantity: '250', range: '$180–$250' },
-              { quantity: '500', range: '$300–$420' },
-              { quantity: '1000', range: '$500–$700' },
-              { quantity: '2500', range: '$900–$1300' },
-              { quantity: '5000', range: 'Custom quote' },
-            ],
-          },
+        "id": "tickets",
+        "title": "Tickets",
+        "description": "Sequentially numbered tickets for events, fundraisers, and admissions.",
+        "icon": "Ticket",
+        "type": "tieredQuantity",
+        "quantities": [
+          "100",
+          "250",
+          "500",
+          "1000",
+          "2500",
+          "5000"
         ],
-        note: 'Includes sequential numbering. Additional charges may apply for multiple number fields or custom layouts.',
+        "tiers": [
+          {
+            "id": "standard-tickets",
+            "label": "Standard Numbered Tickets",
+            "note": "14pt stock with optional perforation and single numbering field.",
+            "priceTable": [
+              {
+                "quantity": "100",
+                "range": "$80–$110"
+              },
+              {
+                "quantity": "250",
+                "range": "$140–$190"
+              },
+              {
+                "quantity": "500",
+                "range": "$220–$300"
+              },
+              {
+                "quantity": "1000",
+                "range": "$350–$500"
+              },
+              {
+                "quantity": "2500",
+                "range": "$700–$950"
+              },
+              {
+                "quantity": "5000",
+                "range": "$1200–$1600"
+              }
+            ]
+          },
+          {
+            "id": "premium-tickets",
+            "label": "Premium Event Tickets",
+            "note": "Double-sided printing and multiple numbering fields for premium events.",
+            "priceTable": [
+              {
+                "quantity": "100",
+                "range": "$110–$150"
+              },
+              {
+                "quantity": "250",
+                "range": "$180–$250"
+              },
+              {
+                "quantity": "500",
+                "range": "$300–$420"
+              },
+              {
+                "quantity": "1000",
+                "range": "$500–$700"
+              },
+              {
+                "quantity": "2500",
+                "range": "$900–$1300"
+              },
+              {
+                "quantity": "5000",
+                "range": "Custom quote"
+              }
+            ]
+          }
+        ],
+        "note": "Includes sequential numbering. Additional charges may apply for multiple number fields or custom layouts."
       },
       {
-        id: 'invitation-cards',
-        title: 'Invitation Cards',
-        description: 'Invitation cards in standard, premium, and luxury tiers.',
-        icon: 'Mail',
-        type: 'tieredQuantity',
-        quantities: ['100', '250', '500', '1000'],
-        tiers: [
-          {
-            id: 'standard-invitations',
-            label: 'Standard Invitations',
-            note: '14pt matte or AQ stock for clean, affordable invites.',
-            priceTable: [
-              { quantity: '100', range: '$70–$100' },
-              { quantity: '250', range: '$110–$150' },
-              { quantity: '500', range: '$160–$220' },
-              { quantity: '1000', range: '$240–$340' },
-            ],
-          },
-          {
-            id: 'premium-invitations',
-            label: 'Premium Invitations',
-            note: 'UV coating and pearl paper for upscale event invitations.',
-            priceTable: [
-              { quantity: '100', range: '$100–$140' },
-              { quantity: '250', range: '$150–$220' },
-              { quantity: '500', range: '$220–$320' },
-              { quantity: '1000', range: '$320–$450' },
-            ],
-          },
-          {
-            id: 'luxury-invitations',
-            label: 'Luxury Invitations',
-            note: 'Metallic foil, kraft paper, and premium specialty finishes.',
-            priceTable: [
-              { quantity: '100', range: '$160–$240' },
-              { quantity: '250', range: '$280–$400' },
-              { quantity: '500', range: '$400–$600' },
-              { quantity: '1000', range: 'Custom quote' },
-            ],
-          },
+        "id": "invitation-cards",
+        "title": "Invitation Cards",
+        "description": "Invitation cards in standard, premium, and luxury tiers.",
+        "icon": "Mail",
+        "type": "tieredQuantity",
+        "quantities": [
+          "100",
+          "250",
+          "500",
+          "1000"
         ],
-        note: 'Use tiered categories for budget, premium, and luxury invitation pricing.',
-      },
-    ],
+        "tiers": [
+          {
+            "id": "standard-invitations",
+            "label": "Standard Invitations",
+            "note": "14pt matte or AQ stock for clean, affordable invites.",
+            "priceTable": [
+              {
+                "quantity": "100",
+                "range": "$70–$100"
+              },
+              {
+                "quantity": "250",
+                "range": "$110–$150"
+              },
+              {
+                "quantity": "500",
+                "range": "$160–$220"
+              },
+              {
+                "quantity": "1000",
+                "range": "$240–$340"
+              }
+            ]
+          },
+          {
+            "id": "premium-invitations",
+            "label": "Premium Invitations",
+            "note": "UV coating and pearl paper for upscale event invitations.",
+            "priceTable": [
+              {
+                "quantity": "100",
+                "range": "$100–$140"
+              },
+              {
+                "quantity": "250",
+                "range": "$150–$220"
+              },
+              {
+                "quantity": "500",
+                "range": "$220–$320"
+              },
+              {
+                "quantity": "1000",
+                "range": "$320–$450"
+              }
+            ]
+          },
+          {
+            "id": "luxury-invitations",
+            "label": "Luxury Invitations",
+            "note": "Metallic foil, kraft paper, and premium specialty finishes.",
+            "priceTable": [
+              {
+                "quantity": "100",
+                "range": "$160–$240"
+              },
+              {
+                "quantity": "250",
+                "range": "$280–$400"
+              },
+              {
+                "quantity": "500",
+                "range": "$400–$600"
+              },
+              {
+                "quantity": "1000",
+                "range": "Custom quote"
+              }
+            ]
+          }
+        ],
+        "note": "Use tiered categories for budget, premium, and luxury invitation pricing."
+      }
+    ]
   },
   {
-    id: 'promotional-products',
-    title: 'Promotional Products',
-    description: 'Branded merchandise and corporate gifts for promotional campaigns.',
-    icon: 'Gift',
-    products: [
+    "id": "promotional-products",
+    "title": "Promotional Products",
+    "description": "Branded merchandise and corporate gifts for promotional campaigns.",
+    "icon": "Gift",
+    "products": [
       {
-        id: 'custom-printed-mugs',
-        title: 'Custom Printed Mugs',
-        description: 'Budget-friendly ceramic mugs with full-color custom printing.',
-        icon: 'Coffee',
-        type: 'tieredQuantity',
-        quantities: ['10+', '25+', '50+', '100+'],
-        tiers: [
-          {
-            id: 'mugs-default',
-            label: 'Ceramic Mugs',
-            note: 'Includes full-color printing. Final pricing may vary slightly based on design and quantity.',
-            priceTable: [
-              { quantity: '10+', range: '$14–$16 per mug' },
-              { quantity: '25+', range: '$12–$14 per mug' },
-              { quantity: '50+', range: '$10–$12 per mug' },
-              { quantity: '100+', range: 'Custom Quote (Best Pricing)' },
-            ],
-          },
+        "id": "custom-printed-mugs",
+        "title": "Custom Printed Mugs",
+        "description": "Budget-friendly ceramic mugs with full-color custom printing.",
+        "icon": "Coffee",
+        "type": "tieredQuantity",
+        "quantities": [
+          "10+",
+          "25+",
+          "50+",
+          "100+"
         ],
-        note: 'Prices include full-color printing. Final pricing may vary slightly based on design and quantity.',
+        "tiers": [
+          {
+            "id": "mugs-default",
+            "label": "Ceramic Mugs",
+            "note": "Includes full-color printing. Final pricing may vary slightly based on design and quantity.",
+            "priceTable": [
+              {
+                "quantity": "10+",
+                "range": "$14–$16 per mug"
+              },
+              {
+                "quantity": "25+",
+                "range": "$12–$14 per mug"
+              },
+              {
+                "quantity": "50+",
+                "range": "$10–$12 per mug"
+              },
+              {
+                "quantity": "100+",
+                "range": "Custom Quote (Best Pricing)"
+              }
+            ]
+          }
+        ],
+        "note": "Prices include full-color printing. Final pricing may vary slightly based on design and quantity."
       },
       {
-        id: 'stainless-steel-bottles',
-        title: 'Stainless Steel Bottles',
-        description: 'Durable 17oz stainless steel bottles for corporate branding.',
-        icon: 'GlassWater',
-        type: 'tieredQuantity',
-        quantities: ['10+', '25+', '50+', '100+'],
-        tiers: [
-          {
-            id: 'bottles-default',
-            label: '17oz Stainless Steel Bottles',
-            note: 'Prices include custom branding. Final pricing may vary based on design and quantity.',
-            priceTable: [
-              { quantity: '10+', range: '$22–$26 per bottle' },
-              { quantity: '25+', range: '$20–$24 per bottle' },
-              { quantity: '50+', range: '$18–$22 per bottle' },
-              { quantity: '100+', range: 'Custom Quote (Best Pricing)' },
-            ],
-          },
+        "id": "stainless-steel-bottles",
+        "title": "Stainless Steel Bottles",
+        "description": "Durable 17oz stainless steel bottles for corporate branding.",
+        "icon": "GlassWater",
+        "type": "tieredQuantity",
+        "quantities": [
+          "10+",
+          "25+",
+          "50+",
+          "100+"
         ],
-        note: 'Prices include custom branding. Final pricing may vary based on design and quantity.',
+        "tiers": [
+          {
+            "id": "bottles-default",
+            "label": "17oz Stainless Steel Bottles",
+            "note": "Prices include custom branding. Final pricing may vary based on design and quantity.",
+            "priceTable": [
+              {
+                "quantity": "10+",
+                "range": "$22–$26 per bottle"
+              },
+              {
+                "quantity": "25+",
+                "range": "$20–$24 per bottle"
+              },
+              {
+                "quantity": "50+",
+                "range": "$18–$22 per bottle"
+              },
+              {
+                "quantity": "100+",
+                "range": "Custom Quote (Best Pricing)"
+              }
+            ]
+          }
+        ],
+        "note": "Prices include custom branding. Final pricing may vary based on design and quantity."
       },
       {
-        id: 'tumblers',
-        title: 'Tumblers',
-        description: 'Premium 20oz branded drinkware with full-color branding.',
-        icon: 'CupSoda',
-        type: 'tieredQuantity',
-        quantities: ['10+', '25+', '50+', '100+'],
-        tiers: [
-          {
-            id: 'tumblers-default',
-            label: '20oz Premium Tumblers',
-            note: 'Includes full-color branding. Additional charges may apply for multi-side printing.',
-            priceTable: [
-              { quantity: '10+', range: '$28–$34 per tumbler' },
-              { quantity: '25+', range: '$26–$30 per tumbler' },
-              { quantity: '50+', range: '$24–$28 per tumbler' },
-              { quantity: '100+', range: 'Custom Quote (Best Pricing)' },
-            ],
-          },
+        "id": "tumblers",
+        "title": "Tumblers",
+        "description": "Premium 20oz branded drinkware with full-color branding.",
+        "icon": "CupSoda",
+        "type": "tieredQuantity",
+        "quantities": [
+          "10+",
+          "25+",
+          "50+",
+          "100+"
         ],
-        note: 'Includes full-color branding. Additional charges may apply for multi-side printing.',
+        "tiers": [
+          {
+            "id": "tumblers-default",
+            "label": "20oz Premium Tumblers",
+            "note": "Includes full-color branding. Additional charges may apply for multi-side printing.",
+            "priceTable": [
+              {
+                "quantity": "10+",
+                "range": "$28–$34 per tumbler"
+              },
+              {
+                "quantity": "25+",
+                "range": "$26–$30 per tumbler"
+              },
+              {
+                "quantity": "50+",
+                "range": "$24–$28 per tumbler"
+              },
+              {
+                "quantity": "100+",
+                "range": "Custom Quote (Best Pricing)"
+              }
+            ]
+          }
+        ],
+        "note": "Includes full-color branding. Additional charges may apply for multi-side printing."
       },
       {
-        id: 'keychains',
-        title: 'Keychains',
-        description: 'Promotional keychains with full-color printing sold in multiples of 10.',
-        icon: 'KeyRound',
-        type: 'tieredQuantity',
-        quantities: ['50+', '100+', '250+', '500+'],
-        tiers: [
-          {
-            id: 'keychains-default',
-            label: 'Printed Keychains',
-            note: 'Sold in multiples of 10. Pricing includes full-color printing.',
-            priceTable: [
-              { quantity: '50+', range: '$4.50–$5.50 each' },
-              { quantity: '100+', range: '$4.00–$5.00 each' },
-              { quantity: '250+', range: '$3.50–$4.50 each' },
-              { quantity: '500+', range: 'Custom Quote (Best Pricing)' },
-            ],
-          },
+        "id": "keychains",
+        "title": "Keychains",
+        "description": "Promotional keychains with full-color printing sold in multiples of 10.",
+        "icon": "KeyRound",
+        "type": "tieredQuantity",
+        "quantities": [
+          "50+",
+          "100+",
+          "250+",
+          "500+"
         ],
-        note: 'Sold in multiples of 10. Pricing includes full-color printing.',
+        "tiers": [
+          {
+            "id": "keychains-default",
+            "label": "Printed Keychains",
+            "note": "Sold in multiples of 10. Pricing includes full-color printing.",
+            "priceTable": [
+              {
+                "quantity": "50+",
+                "range": "$4.50–$5.50 each"
+              },
+              {
+                "quantity": "100+",
+                "range": "$4.00–$5.00 each"
+              },
+              {
+                "quantity": "250+",
+                "range": "$3.50–$4.50 each"
+              },
+              {
+                "quantity": "500+",
+                "range": "Custom Quote (Best Pricing)"
+              }
+            ]
+          }
+        ],
+        "note": "Sold in multiples of 10. Pricing includes full-color printing."
       },
       {
-        id: 'mouse-pads',
-        title: 'Mouse Pads',
-        description: 'Custom mouse pads with full-color printing for office branding.',
-        icon: 'Mouse',
-        type: 'tieredQuantity',
-        quantities: ['10+', '25+', '50+', '100+'],
-        tiers: [
-          {
-            id: 'mousepads-default',
-            label: 'Mouse Pads',
-            note: 'Includes full-color printing. Pricing may vary for custom sizes or premium finishes.',
-            priceTable: [
-              { quantity: '10+', range: '$12–$14 each' },
-              { quantity: '25+', range: '$11–$13 each' },
-              { quantity: '50+', range: '$10–$12 each' },
-              { quantity: '100+', range: 'Custom Quote (Best Pricing)' },
-            ],
-          },
+        "id": "mouse-pads",
+        "title": "Mouse Pads",
+        "description": "Custom mouse pads with full-color printing for office branding.",
+        "icon": "Mouse",
+        "type": "tieredQuantity",
+        "quantities": [
+          "10+",
+          "25+",
+          "50+",
+          "100+"
         ],
-        note: 'Includes full-color printing. Pricing may vary for custom sizes or premium finishes.',
-      },
-    ],
+        "tiers": [
+          {
+            "id": "mousepads-default",
+            "label": "Mouse Pads",
+            "note": "Includes full-color printing. Pricing may vary for custom sizes or premium finishes.",
+            "priceTable": [
+              {
+                "quantity": "10+",
+                "range": "$12–$14 each"
+              },
+              {
+                "quantity": "25+",
+                "range": "$11–$13 each"
+              },
+              {
+                "quantity": "50+",
+                "range": "$10–$12 each"
+              },
+              {
+                "quantity": "100+",
+                "range": "Custom Quote (Best Pricing)"
+              }
+            ]
+          }
+        ],
+        "note": "Includes full-color printing. Pricing may vary for custom sizes or premium finishes."
+      }
+    ]
   },
   {
-    id: 'indoor-branding-and-displays',
-    title: 'Indoor Branding & Displays',
-    description: 'Interior display systems, event assets, and branded installations.',
-    icon: 'Presentation',
-    products: [
+    "id": "indoor-branding-and-displays",
+    "title": "Indoor Branding & Displays",
+    "description": "Interior display systems, event assets, and branded installations.",
+    "icon": "Presentation",
+    "products": [
       {
-        id: 'led-displays',
-        title: 'LED Displays',
-        description: 'Digital LED installations for indoor branded messaging.',
-        icon: 'MonitorPlay',
-        type: 'customQuote',
-        priceLabel: 'Contact us for pricing',
-        note: 'Pricing depends on size, installation, and control setup.',
+        "id": "led-displays",
+        "title": "LED Displays",
+        "description": "Digital LED installations for indoor branded messaging.",
+        "icon": "MonitorPlay",
+        "type": "customQuote",
+        "priceLabel": "Contact us for pricing",
+        "note": "Pricing depends on size, installation, and control setup."
       },
       {
-        id: 'table-covers',
-        title: 'Table Covers',
-        description: 'Branded table covers for events and receptions.',
-        icon: 'Layers2',
-        type: 'fixedRange',
-        priceLabel: '$95–$185 plus tax',
-        note: 'Premium printed covers with fitted or stretch styles.',
+        "id": "table-covers",
+        "title": "Table Covers",
+        "description": "Branded table covers for events and receptions.",
+        "icon": "Layers2",
+        "type": "fixedRange",
+        "priceLabel": "$95–$185 plus tax",
+        "note": "Premium printed covers with fitted or stretch styles."
       },
       {
-        id: 'tents',
-        title: 'Tents',
-        description: 'Custom event tents and canopies with branding options.',
-        icon: 'Tent',
-        type: 'startingPrice',
-        priceLabel: '$800 plus tax',
-        note: 'Starting price for custom printed tent solutions.',
-      },
-    ],
+        "id": "tents",
+        "title": "Tents",
+        "description": "Custom event tents and canopies with branding options.",
+        "icon": "Tent",
+        "type": "startingPrice",
+        "priceLabel": "$800 plus tax",
+        "note": "Starting price for custom printed tent solutions."
+      }
+    ]
   },
   {
-    id: 'digital-services',
-    title: 'Digital Services',
-    description: 'Web and digital display services for modern brand experiences.',
-    icon: 'Globe',
-    products: [
+    "id": "digital-services",
+    "title": "Digital Services",
+    "description": "Web and digital display services for modern brand experiences.",
+    "icon": "Globe",
+    "products": [
       {
-        id: 'website-development',
-        title: 'Website Development',
-        description: 'Custom website projects for businesses and campaigns.',
-        icon: 'Monitor',
-        type: 'customQuote',
-        priceLabel: 'Contact us for pricing',
-        note: 'Project pricing varies by scope, platform, and timelines.',
+        "id": "website-development",
+        "title": "Website Development",
+        "description": "Custom website projects for businesses and campaigns.",
+        "icon": "Monitor",
+        "type": "customQuote",
+        "priceLabel": "Contact us for pricing",
+        "note": "Project pricing varies by scope, platform, and timelines."
       },
       {
-        id: 'digital-display-setup',
-        title: 'Digital Display Setup',
-        description: 'Setup services for digital displays and signage networks.',
-        icon: 'MonitorSmartphone',
-        type: 'startingPrice',
-        priceLabel: '$300 plus',
-        note: 'Approximate starting price based on setup complexity.',
-      },
-    ],
-  },
+        "id": "digital-display-setup",
+        "title": "Digital Display Setup",
+        "description": "Setup services for digital displays and signage networks.",
+        "icon": "MonitorSmartphone",
+        "type": "startingPrice",
+        "priceLabel": "$300 plus",
+        "note": "Approximate starting price based on setup complexity."
+      }
+    ]
+  }
 ]
 
 export default categories
