@@ -34,18 +34,22 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Invalid pricing data' })
   }
 
-  const {
-    GITHUB_TOKEN,
-    GITHUB_OWNER,
-    GITHUB_REPO,
-    GITHUB_BRANCH = 'main',
-  } = process.env
+  // Trim every value — trailing spaces/newlines from copy-paste are a common cause of 404s
+  const GITHUB_TOKEN  = (process.env.GITHUB_TOKEN  || '').trim()
+  const GITHUB_OWNER  = (process.env.GITHUB_OWNER  || '').trim()
+  const GITHUB_REPO   = (process.env.GITHUB_REPO   || '').trim()
+  const GITHUB_BRANCH = (process.env.GITHUB_BRANCH || 'master').trim()
 
-  if (!GITHUB_TOKEN || !GITHUB_OWNER || !GITHUB_REPO) {
-    return res.status(500).json({ error: 'GitHub env vars not configured' })
+  const missing = []
+  if (!GITHUB_TOKEN) missing.push('GITHUB_TOKEN')
+  if (!GITHUB_OWNER) missing.push('GITHUB_OWNER')
+  if (!GITHUB_REPO) missing.push('GITHUB_REPO')
+  if (missing.length) {
+    return res.status(500).json({ error: `Missing env vars: ${missing.join(', ')}` })
   }
 
   const apiBase = `https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${GITHUB_FILE_PATH}`
+  const target = `${GITHUB_OWNER}/${GITHUB_REPO}@${GITHUB_BRANCH}:${GITHUB_FILE_PATH}`
   const headers = {
     Authorization: `token ${GITHUB_TOKEN}`,
     Accept: 'application/vnd.github+json',
@@ -55,10 +59,15 @@ export default async function handler(req, res) {
 
   try {
     // Step 1: Get current file SHA (required by GitHub API to update a file)
-    const getRes = await fetch(`${apiBase}?ref=${GITHUB_BRANCH}`, { headers })
+    const getRes = await fetch(`${apiBase}?ref=${encodeURIComponent(GITHUB_BRANCH)}`, { headers })
     if (!getRes.ok) {
-      const err = await getRes.json()
-      return res.status(502).json({ error: `GitHub GET failed: ${err.message}` })
+      const detail = await getRes.text()
+      let hint = ''
+      if (getRes.status === 404) hint = ' — check GITHUB_OWNER/GITHUB_REPO/GITHUB_BRANCH spelling, or the token lacks Contents access to this repo.'
+      if (getRes.status === 401) hint = ' — GITHUB_TOKEN is invalid or expired.'
+      return res.status(502).json({
+        error: `GitHub GET ${getRes.status} for ${target}.${hint} [${detail.slice(0, 120)}]`,
+      })
     }
     const { sha } = await getRes.json()
 
@@ -79,8 +88,12 @@ export default async function handler(req, res) {
     })
 
     if (!putRes.ok) {
-      const err = await putRes.json()
-      return res.status(502).json({ error: `GitHub PUT failed: ${err.message}` })
+      const detail = await putRes.text()
+      let hint = ''
+      if (putRes.status === 403 || putRes.status === 404) hint = ' — the token needs Contents: Read AND Write permission on this repo.'
+      return res.status(502).json({
+        error: `GitHub PUT ${putRes.status} for ${target}.${hint} [${detail.slice(0, 120)}]`,
+      })
     }
 
     return res.status(200).json({ ok: true })
